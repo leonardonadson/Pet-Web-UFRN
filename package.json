@@ -1,0 +1,12 @@
+{
+  "name": "petweb",
+  "version": "0.1.0-entrega1",
+  "type": "module",
+  "private": true,
+  "description": "PetWeb - Entrega 1 (fundação): frontend estático + backend local Node/SQLite com auth e CRUD de usuários.",
+  "scripts": {
+    "start": "node local-server.js",
+    "dev:local": "node local-server.js",
+    "lint": "node --check js/script.js && node --check js/api.js && node --check js/auth.js && node --check js/dashboard.js && node --check js/admin.js"
+  }
+}
