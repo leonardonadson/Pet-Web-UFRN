@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | PetWeb</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header class="header header--app">
+      <div class="container header__inner">
+        <a class="header__logo" href="index.html"
+          ><svg
+            class="header-brand-mark"
+            width="38"
+            height="38"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            style="margin-right: 4px"
+          >
+            <path
+              d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z"
+              fill="url(#houseGrad)"
+            />
+            <circle cx="20" cy="14" r="3" fill="#FFFFFF" />
+            <defs>
+              <linearGradient id="houseGrad" x1="0" y1="0" x2="40" y2="40">
+                <stop stop-color="#4F46E5" />
+                <stop offset="1" stop-color="#EC4899" />
+              </linearGradient>
+            </defs></svg
+          ><span class="header__logo-text">PetWeb</span></a
+        >
+        <div class="header__app-actions">
+          <div class="header__actions">
+            <div class="dropdown">
+              <button
+                class="header__profile-toggle"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                data-dropdown-toggle
+              >
+                <span
+                  class="avatar"
+                  data-admin-avatar
+                  style="width: 36px; height: 36px; font-size: 14px"
+                  >AD</span
+                >
+                <span class="header__profile-name" data-admin-name
+                  >Administrador</span
+                >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <strong data-admin-name-full>Administrador</strong>
+                  <small>admin</small>
+                </div>
+                <button
+                  class="dropdown-item text-danger"
+                  type="button"
+                  data-admin-logout
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                  Sair do PetWeb
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-layout">
+      <aside class="sidebar" aria-label="Menu administrativo">
+        <button
+          class="sidebar__link active"
+          type="button"
+          data-admin-tab="usuarios"
+        >
+          Usuários
+        </button>
+        <button class="sidebar__link" type="button" data-admin-tab="pets">
+          Pets por Cliente
+        </button>
+        <button class="sidebar__link" type="button" data-admin-tab="tipos-pet">
+          Tipos de Pets
+        </button>
+        <button class="sidebar__link" type="button" data-admin-tab="servicos">
+          Serviços
+        </button>
+      </aside>
+
+      <section class="dashboard-content">
+        <div class="section-header">
+          <p class="section-eyebrow">Admin</p>
+          <h1 class="section-title">Controle do PetWeb</h1>
+        </div>
+
+        <section class="admin-panel active" data-admin-panel="usuarios">
+          <div class="content-panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="section-eyebrow">Usuários</p>
+                <h2>Clientes e administradores</h2>
+              </div>
+              <button class="btn btn-cta btn-sm" type="button" data-new-user>
+                Novo usuário
+              </button>
+            </div>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Perfil</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-users></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-admin-panel="pets">
+          <div class="content-panel">
+            <p class="section-eyebrow">Pets</p>
+            <h2>
+              Animais cadastrados por cliente
+              <small
+                style="
+                  font-weight: 400;
+                  color: var(--clr-neutral-500);
+                  font-size: 13px;
+                "
+              ></small>
+            </h2>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Pet</th>
+                    <th>Tutor</th>
+                    <th>Espécie</th>
+                    <th>Raça</th>
+                    <th>Porte</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-pets></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-admin-panel="tipos-pet">
+          <div class="content-panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="section-eyebrow">Tipos de Pets</p>
+                <h2>
+                  Espécies disponíveis no cadastro
+                  <small
+                    style="
+                      font-weight: 400;
+                      color: var(--clr-neutral-500);
+                      font-size: 13px;
+                    "
+                  ></small>
+                </h2>
+              </div>
+            </div>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Ativo</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-pet-types></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-admin-panel="servicos">
+          <div class="content-panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="section-eyebrow">Serviços</p>
+                <h2>
+                  Catálogo e preços
+                  <small
+                    style="
+                      font-weight: 400;
+                      color: var(--clr-neutral-500);
+                      font-size: 13px;
+                    "
+                  ></small>
+                </h2>
+              </div>
+            </div>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Duração</th>
+                    <th>Ativo</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-services></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="user-dialog">
+      <form method="dialog" data-user-form>
+        <input type="hidden" name="id" />
+        <div class="modal__header">
+          <h2 class="modal__title" data-user-modal-title>Editar cliente</h2>
+          <button class="modal__close" type="button" data-dialog-close>
+            ×
+          </button>
+        </div>
+        <div class="modal__body">
+          <label class="field"
+            ><span class="field__label">Nome</span
+            ><input class="field__input" name="nome" required
+          /></label>
+          <label class="field"
+            ><span class="field__label">E-mail</span
+            ><input class="field__input" name="email" type="email" required
+          /></label>
+          <label class="field"
+            ><span class="field__label">Telefone</span
+            ><input class="field__input" name="telefone"
+          /></label>
+          <label class="field"
+            ><span class="field__label">Perfil</span
+            ><select class="field__input" name="tipo_perfil">
+              <option value="cliente">cliente</option>
+              <option value="admin">admin</option>
+            </select></label
+          >
+          <label class="field" data-user-password-field
+            ><span class="field__label">Senha</span
+            ><input
+              class="field__input"
+              name="senha"
+              type="password"
+              minlength="8"
+              placeholder="Opcional. Padrão: PetWeb@123"
+          /></label>
+        </div>
+        <div class="modal__footer">
+          <button class="btn btn-ghost" type="button" data-dialog-close>
+            Cancelar
+          </button>
+          <button class="btn btn-cta" type="submit">Salvar cliente</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="confirm-dialog" class="confirm-dialog">
+      <div class="modal__header">
+        <div class="confirm-dialog__title-row">
+          <span class="confirm-dialog__icon" aria-hidden="true">!</span>
+          <h2 class="modal__title" data-confirm-title>Confirmar exclusão</h2>
+        </div>
+        <button class="modal__close" type="button" data-confirm-cancel>
+          ×
+        </button>
+      </div>
+      <div class="modal__body modal__body--confirm">
+        <p class="confirm-dialog__message" data-confirm-message></p>
+        <p class="confirm-dialog__detail" data-confirm-detail></p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn-ghost" type="button" data-confirm-cancel>
+          Cancelar
+        </button>
+        <button class="btn btn-danger" type="button" data-confirm-action>
+          Excluir
+        </button>
+      </div>
+    </dialog>
+
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>
