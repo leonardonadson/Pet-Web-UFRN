@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | PetWeb</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="header header--app">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html"><svg class="header-brand-mark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-right: 4px;"><path d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z" fill="url(#houseGrad)"/><circle cx="20" cy="14" r="3" fill="#FFFFFF"/><defs><linearGradient id="houseGrad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#4F46E5"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs></svg><span class="header__logo-text">PetWeb</span></a>
+      <div class="header__actions">
+        <div class="dropdown">
+          <button class="header__profile-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle>
+            <span class="avatar" data-sidebar-avatar style="width:36px;height:36px;font-size:14px">CL</span>
+            <span class="header__profile-name" data-sidebar-name>Cliente</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">
+              <strong data-sidebar-name-full>Cliente</strong>
+              <small data-sidebar-role>cliente</small>
+            </div>
+            <button class="dropdown-item text-danger" type="button" data-dashboard-logout>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+              Sair do PetWeb
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="page-main dashboard-user">
+    <div class="container">
+      <header class="user-welcome">
+        <div class="user-welcome__profile">
+           <span class="avatar avatar--xl" data-sidebar-avatar style="width:64px;height:64px;font-size:24px">CL</span>
+           <div>
+             <h1 class="user-welcome__title">Olá, <span data-sidebar-name>Cliente</span>!</h1>
+             <p class="user-welcome__subtitle">Bem-vindo ao seu portal PetWeb.</p>
+           </div>
+        </div>
+      </header>
+
+      <section class="dashboard-content-area">
+        <div class="dashboard-panel active" data-client-panel="agendamentos">
+          <div class="section-header">
+            <h2 class="section-title">Meus agendamentos</h2>
+            <p class="section-subtitle">Acompanhe seus próximos serviços. (Demonstração visual — Entrega 1)</p>
+          </div>
+
+          <div class="appointment-counters" data-dashboard-counters style="display:flex;gap:16px;margin-bottom:32px;">
+            <div class="appt-counter" style="padding:16px 24px;background:#fff;border-radius:12px;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+              <strong data-counter-pending style="display:block;font-size:24px;color:#f59e0b;font-weight:800;">0</strong>
+              <span style="font-size:14px;color:#6b7280;font-weight:700;">Pendentes</span>
+            </div>
+            <div class="appt-counter" style="padding:16px 24px;background:#fff;border-radius:12px;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+              <strong data-counter-confirmed style="display:block;font-size:24px;color:#3b82f6;font-weight:800;">0</strong>
+              <span style="font-size:14px;color:#6b7280;font-weight:700;">Confirmados</span>
+            </div>
+            <div class="appt-counter" style="padding:16px 24px;background:#fff;border-radius:12px;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+              <strong data-counter-done style="display:block;font-size:24px;color:#10b981;font-weight:800;">0</strong>
+              <span style="font-size:14px;color:#6b7280;font-weight:700;">Concluídos</span>
+            </div>
+          </div>
+
+          <div class="appointments-grid" data-appointments-body>
+            <!-- cards renderizados via JS (mock estático) -->
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="js/script.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
