@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetWeb | O Cuidado Premium Que Seu Pet Merece</title>
+  <meta name="description" content="Agendamento inteligente e acompanhamento em tempo real do seu pet. Cuidado focado no bem-estar de quem você mais ama.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html" aria-label="PetWeb Home">
+        <svg class="header-brand-mark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-right: 4px;"><path d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z" fill="url(#houseGrad)"/><circle cx="20" cy="14" r="3" fill="#FFFFFF"/><defs><linearGradient id="houseGrad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#4F46E5"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs></svg>
+        <span class="header__logo-text">PetWeb</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link active" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#servicos">Serviços</a></li>
+          <li><a class="nav__link" href="#como-funciona">Como Funciona</a></li>
+          <li><a class="nav__link" href="#depoimentos">Depoimentos</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions" data-auth-actions>
+        <a class="btn btn-ghost btn-sm" href="login.html">Entrar</a>
+        <a class="btn btn-cta btn-sm" href="cadastro.html">Agende Agora</a>
+      </div>
+      <button class="header__hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" data-nav-overlay aria-hidden="true"></div>
+
+  <nav class="mobile-nav" aria-label="Menu mobile" data-mobile-nav>
+    <div class="mobile-nav__header">
+      <a class="header__logo" href="index.html" aria-label="PetWeb Home">
+        <svg class="header-brand-mark" width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z" fill="url(#houseGradDrawer)"/><circle cx="20" cy="14" r="3" fill="#FFFFFF"/><defs><linearGradient id="houseGradDrawer" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#4F46E5"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs></svg>
+        <span style="font-weight:800;font-size:1.1rem;color:var(--clr-primary-900)">PetWeb</span>
+      </a>
+      <button class="mobile-nav__close" type="button" aria-label="Fechar menu" data-menu-toggle>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="#home">Home</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div class="mobile-nav__actions" data-auth-mobile>
+      <a href="login.html" class="btn btn-outline" style="width:100%">Entrar</a>
+      <a href="cadastro.html" class="btn btn-cta" style="width:100%">Agende Agora</a>
+    </div>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <span class="badge badge--pill">Nova Experiência PetWeb</span>
+          <h1 class="gradient-text">O Cuidado Premium Que Seu Pet Merece.</h1>
+          <p class="hero__desc">Agendamento inteligente, acompanhamento em tempo real e um atendimento de excelência focado no bem-estar de quem você mais ama.</p>
+          <div class="hero__actions">
+            <a class="btn btn-cta btn-lg" href="cadastro.html">Agendar Avaliação</a>
+            <a class="btn btn-outline btn-lg" href="#servicos">Explorar Serviços</a>
+          </div>
+          <div class="hero__trust">
+            <div class="avatars-group">
+              <img src="https://ui-avatars.com/api/?name=Ana&background=CAF0F8&color=003049" alt="User" class="avatar-small">
+              <img src="https://ui-avatars.com/api/?name=Carlos&background=FFD4A8&color=E8620A" alt="User" class="avatar-small">
+              <img src="https://ui-avatars.com/api/?name=Julia&background=D1D5DB&color=374151" alt="User" class="avatar-small">
+            </div>
+            <span>Mais de <strong>1.200</strong> tutores confiam em nós.</span>
+          </div>
+        </div>
+        <div class="hero__visual reveal" style="transition-delay: 200ms;">
+          <div class="image-wrapper">
+            <img src="assets/hero_pets_clinic_1777668880573.png" alt="Cães e gatos na clínica PetWeb" class="main-img">
+            <div class="glass-card floating-card-1">
+              <div class="glass-card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div class="glass-card__text">
+                <strong>4.9/5</strong>
+                <span>Avaliação Média</span>
+              </div>
+            </div>
+            <div class="glass-card floating-card-2">
+              <div class="glass-card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              </div>
+              <div class="glass-card__text">
+                <strong>+2.5k</strong>
+                <span>Pets Atendidos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="servicos">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <p class="section-eyebrow">✦ Nossos Serviços</p>
+          <h2 class="section-title">Especialidades com padrão de excelência.</h2>
+          <p class="section-subtitle">Tudo o que seu melhor amigo precisa, com profissionais qualificados e transparência total.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal is-visible">
+            <div class="service-card__icons-container" aria-hidden="true" style="display:flex;gap:var(--space-3);">
+              <div class="service-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><path d="M10 5 L8 7 M2 12 h20 M7 19 v2 M17 19 v2"/></svg></div>
+            </div>
+            <h3 class="service-card__name">Banho</h3>
+            <p class="service-card__desc">Banho completo com produtos adequados ao tipo de pelo.</p>
+            <div class="service-card__footer">
+              <span class="service-card__price">R$ 49,90</span>
+              <span class="service-card__duration">60 min</span>
+            </div>
+          </article>
+          <article class="service-card reveal is-visible">
+            <div class="service-card__icons-container" aria-hidden="true" style="display:flex;gap:var(--space-3);">
+              <div class="service-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+            </div>
+            <h3 class="service-card__name">Tosa</h3>
+            <p class="service-card__desc">Tosa higiênica ou personalizada com acabamento cuidadoso.</p>
+            <div class="service-card__footer">
+              <span class="service-card__price">R$ 69,90</span>
+              <span class="service-card__duration">90 min</span>
+            </div>
+          </article>
+          <article class="service-card reveal is-visible">
+            <div class="service-card__icons-container" aria-hidden="true" style="display:flex;gap:var(--space-3);">
+              <div class="service-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M11 6V4.6a.6.6 0 0 0-.6-.6h-4.8a.6.6 0 0 0-.6.6V6"/><path d="M14 8v1.1a2.5 2.5 0 0 1-5.002.04l-.002-1.14"/><path d="M8.5 11.5 10 13l-3 3-1.5-1.5"/><path d="M6 15v3a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3"/><path d="M14 17h.01"/><path d="M16 11h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2"/></svg></div>
+            </div>
+            <h3 class="service-card__name">Consulta Veterinária</h3>
+            <p class="service-card__desc">Avaliação clínica com médico veterinário.</p>
+            <div class="service-card__footer">
+              <span class="service-card__price">R$ 120,00</span>
+              <span class="service-card__duration">45 min</span>
+            </div>
+          </article>
+          <article class="service-card reveal is-visible">
+            <div class="service-card__icons-container" aria-hidden="true" style="display:flex;gap:var(--space-3);">
+              <div class="service-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.4 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></div>
+            </div>
+            <h3 class="service-card__name">Vacinação</h3>
+            <p class="service-card__desc">Aplicação de vacina com conferência da carteirinha.</p>
+            <div class="service-card__footer">
+              <span class="service-card__price">R$ 89,90</span>
+              <span class="service-card__duration">30 min</span>
+            </div>
+          </article>
+          <article class="service-card reveal is-visible">
+            <div class="service-card__icons-container" aria-hidden="true" style="display:flex;gap:var(--space-3);">
+              <div class="service-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            </div>
+            <h3 class="service-card__name">Hospedagem</h3>
+            <p class="service-card__desc">Diária com acompanhamento, alimentação e recreação.</p>
+            <div class="service-card__footer">
+              <span class="service-card__price">R$ 140,00</span>
+              <span class="service-card__duration">Diária</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--purple" id="como-funciona">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <p class="section-eyebrow">✦ Por que escolher o PetWeb?</p>
+          <h2 class="section-title">Tecnologia e cuidado andando juntos.</h2>
+          <p class="section-subtitle">Abandonamos os processos ultrapassados para entregar uma experiência premium, transparente e focada no bem-estar do seu pet.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <div class="step-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="step-card__content">
+              <h3>Controle total em suas mãos</h3>
+              <p>Cadastre seus pets uma única vez. Mantenha o histórico, as preferências e os dados essenciais sempre atualizados e acessíveis em qualquer dispositivo.</p>
+            </div>
+          </article>
+          <article class="step-card reveal" style="transition-delay: 100ms;">
+            <div class="step-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+            </div>
+            <div class="step-card__content">
+              <h3>Disponibilidade transparente</h3>
+              <p>Diga adeus à espera no telefone. Nossa agenda sincronizada permite que você veja os horários exatos de cada serviço e reserve o momento ideal em segundos.</p>
+            </div>
+          </article>
+          <article class="step-card reveal" style="transition-delay: 200ms;">
+            <div class="step-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-9 5 18 3-10 2 3h4"/></svg>
+            </div>
+            <div class="step-card__content">
+              <h3>Acompanhamento de status</h3>
+              <p>Saiba exatamente em qual etapa do atendimento seu pet está. Uma gestão de status em tempo real pelo seu painel exclusivo, garantindo tranquilidade.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="depoimentos">
+      <div class="container feature-split feature-split--reverse">
+        <div class="feature-split__visual reveal">
+          <div class="image-wrapper shadow-wrapper">
+            <img src="assets/happy_pet_owner_1777668907832.png" alt="Tutora feliz com seu cachorro" class="feature-img rounded-xl">
+          </div>
+        </div>
+        <div class="feature-split__content reveal" style="transition-delay: 200ms;">
+          <p class="section-eyebrow">✦ Histórias de Amor</p>
+          <h2 class="section-title">O que os tutores dizem sobre nós.</h2>
+          
+          <div class="testimonial-premium">
+            <div class="testimonial-premium__stars">★★★★★</div>
+            <blockquote>“A facilidade de agendar e acompanhar tudo pelo painel mudou minha rotina. O Thor adora as veterinárias e eu amo a transparência do serviço.”</blockquote>
+            <div class="testimonial-premium__author">
+              <img src="https://ui-avatars.com/api/?name=Ana+Lima&background=CAF0F8&color=003049" alt="Ana Lima" class="avatar-large">
+              <div class="author-info">
+                <strong>Ana Lima</strong>
+                <span>Tutora do Thor (Golden Retriever)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="contato">
+      <div class="container cta-inner reveal">
+        <div class="cta-content">
+          <h2 class="cta-title">Pronto para proporcionar a melhor experiência?</h2>
+          <p class="cta-subtitle">Junte-se a milhares de tutores que já revolucionaram o cuidado com seus pets na PetWeb.</p>
+          <div class="cta-actions">
+            <a class="btn btn-cta btn-lg" href="cadastro.html">Agendar Primeiro Atendimento</a>
+            <a class="btn btn-outline-light btn-lg" href="login.html">Acessar Painel</a>
+          </div>
+        </div>
+        <div class="cta-info">
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="info-text">
+              <strong>Endereço</strong>
+              <p>Av. dos Tutores, 420 - Centro<br>Fortaleza - CE</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="info-text">
+              <strong>Horário</strong>
+              <p>Seg a Sex: 08h - 18h<br>Sáb: 08h - 12h</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="info-text">
+              <strong>Contato</strong>
+              <p>(85) 99999-1234<br>contato@petweb.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="header__logo" href="index.html">
+        <svg class="header-brand-mark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-right: 4px;"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z M20 11 A 3 3 0 1 0 20 17 A 3 3 0 1 0 20 11 Z" fill="#FFFFFF"/></svg>
+        <span class="header__logo-text" style="color: white;">PetWeb</span>
+      </a>
+      <div class="footer__links">
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+        <a href="login.html">Área do Cliente</a>
+      </div>
+      <span>© 2026 PetWeb. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/script.js"></script>
+  <!-- Início do widget VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <!-- Fim do widget VLibras -->
+</body>
+</html>
