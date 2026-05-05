@@ -1,0 +1,10 @@
+<svg width="256" height="256" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z" fill="url(#houseGrad)"/>
+  <circle cx="20" cy="14" r="3" fill="#FFFFFF"/>
+  <defs>
+    <linearGradient id="houseGrad" x1="0" y1="0" x2="40" y2="40">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+</svg>
