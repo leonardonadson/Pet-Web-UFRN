@@ -78,15 +78,47 @@ O **Pet Web** propõe uma agenda centralizada, onde o tutor consegue agendar sem
 
 ## ▶️ Como Executar o Projeto
 
-Esta seção será detalhada nas próximas etapas do projeto, quando a estrutura de frontend, backend, banco de dados e scripts de execução estiver definida com mais estabilidade.
+### Desenvolvimento local simples
 
-A ideia é documentar aqui, futuramente:
+```bash
+npm install
+npm run dev:local
+```
 
-*   Pré-requisitos de ambiente.
-*   Comandos para instalação de dependências.
-*   Execução local do frontend e da API.
-*   Configuração de variáveis de ambiente.
-*   Instruções de deploy.
+Esse comando usa `local-server.js` com SQLite local para desenvolvimento rapido.
+
+### Desenvolvimento local no formato Vercel
+
+```bash
+npm install
+npm run dev
+```
+
+Esse comando usa `vercel dev` e executa as rotas serverless em `api/index.js`, conectando no Postgres configurado em `.env`.
+
+### Variaveis de ambiente
+
+Crie o `.env` a partir de `.env.example` e cadastre as mesmas variaveis no painel da Vercel:
+
+| Variavel | Uso |
+| :--- | :--- |
+| `DATABASE_URL` | URL do Postgres/Neon no formato `postgresql://...` |
+| `DB_SCHEMA` | Schema usado pela aplicacao, por exemplo `public` |
+| `SECRET_KEY` | Chave usada para assinar tokens de sessao |
+| `ACCESS_TOKEN_EXPIRE_MINUTES` | Tempo de expiracao do login |
+| `CORS_ORIGIN` | Pode ficar vazio quando frontend e API estao no mesmo dominio |
+| `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `ADMIN_NAME`, `ADMIN_PHONE` | Opcionais para criar o primeiro admin |
+
+### Deploy na Vercel
+
+1. Importe o repositorio na Vercel.
+2. Selecione o framework preset `Other`.
+3. Use `npm run build` como build command.
+4. Use `.` como output directory.
+5. Cadastre as variaveis de ambiente acima.
+6. Faça o deploy.
+
+As rotas da API ficam em `/api/...` e os arquivos HTML/CSS/JS continuam sendo servidos como site estatico.
 
 ***
 
