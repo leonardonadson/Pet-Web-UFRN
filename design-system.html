@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetWeb | Design System</title>
+  <meta name="description" content="Documentação visual e técnica do design system da plataforma PetWeb: tokens, cores, tipografia e componentes reutilizáveis.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/design-system.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html" aria-label="PetWeb Home">
+        <svg width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-right: 4px;">
+          <path d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z" fill="url(#dsHouseGrad)"/>
+          <circle cx="20" cy="14" r="3" fill="#FFFFFF"/>
+          <defs>
+            <linearGradient id="dsHouseGrad" x1="0" y1="0" x2="40" y2="40">
+              <stop stop-color="#4F46E5"/>
+              <stop offset="1" stop-color="#EC4899"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="header__logo-text">PetWeb</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link active" href="design-system.html">Design System</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a class="btn btn-cta btn-sm" href="index.html">Voltar ao site</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-layout">
+    <!-- Sidebar -->
+    <aside class="ds-sidebar" aria-label="Sumário do design system">
+      <h2 class="ds-sidebar__title">PetWeb DS</h2>
+      <p class="ds-sidebar__subtitle">Design System v1.0</p>
+
+      <div class="ds-sidebar__group">
+        <p class="ds-sidebar__group-title">Fundamentos</p>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#cores">Cores</a></li>
+          <li><a class="ds-sidebar__link" href="#gradientes">Gradientes</a></li>
+          <li><a class="ds-sidebar__link" href="#tipografia">Tipografia</a></li>
+          <li><a class="ds-sidebar__link" href="#espacamento">Espaçamento</a></li>
+          <li><a class="ds-sidebar__link" href="#raios">Raios &amp; Bordas</a></li>
+          <li><a class="ds-sidebar__link" href="#sombras">Sombras</a></li>
+        </ul>
+      </div>
+
+      <div class="ds-sidebar__group">
+        <p class="ds-sidebar__group-title">Componentes</p>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#botoes">Botões</a></li>
+          <li><a class="ds-sidebar__link" href="#formularios">Formulários</a></li>
+          <li><a class="ds-sidebar__link" href="#badges">Badges &amp; Status</a></li>
+          <li><a class="ds-sidebar__link" href="#cards">Cards</a></li>
+          <li><a class="ds-sidebar__link" href="#avatares">Avatares</a></li>
+          <li><a class="ds-sidebar__link" href="#navegacao">Navegação</a></li>
+          <li><a class="ds-sidebar__link" href="#abas">Abas &amp; Filtros</a></li>
+          <li><a class="ds-sidebar__link" href="#timeslots">Time Slots</a></li>
+          <li><a class="ds-sidebar__link" href="#toggles">Toggles</a></li>
+          <li><a class="ds-sidebar__link" href="#dropdown">Dropdown</a></li>
+          <li><a class="ds-sidebar__link" href="#tabelas">Tabelas</a></li>
+        </ul>
+      </div>
+
+      <div class="ds-sidebar__group">
+        <p class="ds-sidebar__group-title">Feedback</p>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#toasts">Toasts</a></li>
+          <li><a class="ds-sidebar__link" href="#alertas">Alertas &amp; Empty</a></li>
+          <li><a class="ds-sidebar__link" href="#modais">Modais</a></li>
+          <li><a class="ds-sidebar__link" href="#progresso">Progresso</a></li>
+        </ul>
+      </div>
+
+      <div class="ds-sidebar__group">
+        <p class="ds-sidebar__group-title">Layouts</p>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#hero">Hero</a></li>
+          <li><a class="ds-sidebar__link" href="#secoes">Seções</a></li>
+          <li><a class="ds-sidebar__link" href="#cta">CTA Panels</a></li>
+          <li><a class="ds-sidebar__link" href="#glass">Glass Cards</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="ds-main">
+      <span class="section-eyebrow">PetWeb · Design System</span>
+      <h1 class="ds-page-title">Documentação visual da plataforma</h1>
+      <p class="ds-page-lead">
+        Esta página reúne os fundamentos visuais e os componentes da PetWeb. Tudo o que você vê
+        abaixo é renderizado com as próprias variáveis CSS e classes utilizadas em produção,
+        garantindo paridade com a interface do produto.
+      </p>
+
+      <!-- ============ CORES ============ -->
+      <section id="cores" class="ds-section">
+        <h2 class="ds-section__title">Cores</h2>
+        <p class="ds-section__lead">A paleta é construída em três famílias semânticas — primária (índigo), accent (rosa) e neutra — complementadas por tokens de status e feedback.</p>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Primária — Índigo</h3>
+          <p class="ds-subsection__desc">Identidade da marca. Usada em títulos, botões principais, links de ação e estados ativos.</p>
+          <div class="ds-color-grid">
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-primary-900)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Primary 900</span>
+                <span class="ds-color-card__token">--clr-primary-900</span>
+                <span class="ds-color-card__hex">#312E81</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-primary-700)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Primary 700</span>
+                <span class="ds-color-card__token">--clr-primary-700</span>
+                <span class="ds-color-card__hex">#4338CA</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-primary-500)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Primary 500</span>
+                <span class="ds-color-card__token">--clr-primary-500</span>
+                <span class="ds-color-card__hex">#4F46E5</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-primary-300)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Primary 300</span>
+                <span class="ds-color-card__token">--clr-primary-300</span>
+                <span class="ds-color-card__hex">#818CF8</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-primary-100)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Primary 100</span>
+                <span class="ds-color-card__token">--clr-primary-100</span>
+                <span class="ds-color-card__hex">#E0E7FF</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Accent — Rosa</h3>
+          <p class="ds-subsection__desc">Cor de destaque para chamadas de ação críticas, badges de evento ao vivo e elementos premium.</p>
+          <div class="ds-color-grid">
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-accent-600)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Accent 600</span>
+                <span class="ds-color-card__token">--clr-accent-600</span>
+                <span class="ds-color-card__hex">#DB2777</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-accent-500)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Accent 500</span>
+                <span class="ds-color-card__token">--clr-accent-500</span>
+                <span class="ds-color-card__hex">#EC4899</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-accent-200)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Accent 200</span>
+                <span class="ds-color-card__token">--clr-accent-200</span>
+                <span class="ds-color-card__hex">#FBCFE8</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Neutras</h3>
+          <p class="ds-subsection__desc">Texto, fundos, separadores e estados desabilitados.</p>
+          <div class="ds-color-grid">
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-neutral-950)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Neutral 950</span>
+                <span class="ds-color-card__token">--clr-neutral-950</span>
+                <span class="ds-color-card__hex">#0F1923</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-neutral-700)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Neutral 700</span>
+                <span class="ds-color-card__token">--clr-neutral-700</span>
+                <span class="ds-color-card__hex">#374151</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-neutral-500)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Neutral 500</span>
+                <span class="ds-color-card__token">--clr-neutral-500</span>
+                <span class="ds-color-card__hex">#6B7280</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-neutral-300)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Neutral 300</span>
+                <span class="ds-color-card__token">--clr-neutral-300</span>
+                <span class="ds-color-card__hex">#D1D5DB</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-neutral-150)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Neutral 150</span>
+                <span class="ds-color-card__token">--clr-neutral-150</span>
+                <span class="ds-color-card__hex">#F3F4F6</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-neutral-50)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Neutral 50</span>
+                <span class="ds-color-card__token">--clr-neutral-50</span>
+                <span class="ds-color-card__hex">#F9FAFB</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Status &amp; Feedback</h3>
+          <p class="ds-subsection__desc">Cores semânticas para estados de agendamento, avisos e validações.</p>
+          <div class="ds-color-grid">
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-status-pending)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Pending</span>
+                <span class="ds-color-card__token">--clr-status-pending</span>
+                <span class="ds-color-card__hex">#F59E0B</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-status-confirmed)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Confirmed</span>
+                <span class="ds-color-card__token">--clr-status-confirmed</span>
+                <span class="ds-color-card__hex">#3B82F6</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-status-ongoing)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Ongoing</span>
+                <span class="ds-color-card__token">--clr-status-ongoing</span>
+                <span class="ds-color-card__hex">#FF7F27</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-status-done)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Done / Success</span>
+                <span class="ds-color-card__token">--clr-status-done</span>
+                <span class="ds-color-card__hex">#10B981</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-status-cancelled)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Cancelled</span>
+                <span class="ds-color-card__token">--clr-status-cancelled</span>
+                <span class="ds-color-card__hex">#9CA3AF</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-error)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Error</span>
+                <span class="ds-color-card__token">--clr-error</span>
+                <span class="ds-color-card__hex">#EF4444</span>
+              </div>
+            </article>
+            <article class="ds-color-card">
+              <div class="ds-color-card__swatch" style="background: var(--clr-warning)"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Warning</span>
+                <span class="ds-color-card__token">--clr-warning</span>
+                <span class="ds-color-card__hex">#F59E0B</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GRADIENTES ============ -->
+      <section id="gradientes" class="ds-section">
+        <h2 class="ds-section__title">Gradientes</h2>
+        <p class="ds-section__lead">Quatro gradientes oficiais cobrem heros, cards premium, CTAs e overlays.</p>
+
+        <div class="ds-color-grid">
+          <article class="ds-color-card">
+            <div class="ds-color-card__swatch" style="height: 130px; background: var(--gradient-hero)"></div>
+            <div class="ds-color-card__body">
+              <span class="ds-color-card__name">Hero</span>
+              <span class="ds-color-card__token">--gradient-hero</span>
+              <span class="ds-color-card__hex">135deg · #312E81 → #4F46E5</span>
+            </div>
+          </article>
+          <article class="ds-color-card">
+            <div class="ds-color-card__swatch" style="height: 130px; background: var(--gradient-cta)"></div>
+            <div class="ds-color-card__body">
+              <span class="ds-color-card__name">CTA</span>
+              <span class="ds-color-card__token">--gradient-cta</span>
+              <span class="ds-color-card__hex">135deg · #EC4899 → #DB2777</span>
+            </div>
+          </article>
+          <article class="ds-color-card">
+            <div class="ds-color-card__swatch" style="height: 130px; background: var(--gradient-card)"></div>
+            <div class="ds-color-card__body">
+              <span class="ds-color-card__name">Card</span>
+              <span class="ds-color-card__token">--gradient-card</span>
+              <span class="ds-color-card__hex">160deg · #FFFFFF → #E0E7FF</span>
+            </div>
+          </article>
+          <article class="ds-color-card">
+            <div class="ds-color-card__swatch" style="height: 130px; background: linear-gradient(135deg, #312E81 0%, #4F46E5 50%, #1e1b4b 100%);"></div>
+            <div class="ds-color-card__body">
+              <span class="ds-color-card__name">Overlay</span>
+              <span class="ds-color-card__token">--gradient-overlay</span>
+              <span class="ds-color-card__hex">Translucent indigo</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ TIPOGRAFIA ============ -->
+      <section id="tipografia" class="ds-section">
+        <h2 class="ds-section__title">Tipografia</h2>
+        <p class="ds-section__lead">
+          Duas famílias compõem a tipografia da PetWeb. <strong>Lora</strong> (display, serifada) é usada em títulos
+          e citações. <strong>Plus Jakarta Sans</strong> (UI) cobre todo o restante da interface.
+        </p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview ds-demo__preview--block">
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-5xl · 3.75rem</span>
+              <span class="ds-type-row__sample" style="font-family: var(--font-display); font-size: var(--text-5xl); line-height: var(--leading-tight); color: var(--clr-primary-900);">Cuidado premium</span>
+            </div>
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-4xl · 2.75rem</span>
+              <span class="ds-type-row__sample" style="font-family: var(--font-display); font-size: var(--text-4xl); line-height: var(--leading-tight); color: var(--clr-primary-900);">Título de seção</span>
+            </div>
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-3xl · 2rem</span>
+              <span class="ds-type-row__sample" style="font-family: var(--font-display); font-size: var(--text-3xl); color: var(--clr-primary-900);">Subtítulo importante</span>
+            </div>
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-2xl · 1.5rem</span>
+              <span class="ds-type-row__sample" style="font-size: var(--text-2xl); font-weight: 700;">Cabeçalho de card</span>
+            </div>
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-xl · 1.25rem</span>
+              <span class="ds-type-row__sample" style="font-size: var(--text-xl); font-weight: 700;">Item de destaque</span>
+            </div>
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-lg · 1.125rem</span>
+              <span class="ds-type-row__sample" style="font-size: var(--text-lg);">Texto de apoio em parágrafos longos.</span>
+            </div>
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-base · 1rem</span>
+              <span class="ds-type-row__sample" style="font-size: var(--text-base);">Texto base usado em corpo, formulários e descrições.</span>
+            </div>
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-sm · 0.875rem</span>
+              <span class="ds-type-row__sample" style="font-size: var(--text-sm); color: var(--clr-neutral-700);">Texto secundário em badges, links e legendas.</span>
+            </div>
+            <div class="ds-type-row">
+              <span class="ds-type-row__token">--text-xs · 0.75rem</span>
+              <span class="ds-type-row__sample" style="font-size: var(--text-xs); color: var(--clr-neutral-500); text-transform: uppercase; font-weight: 800;">Eyebrow / metadados</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Eyebrow + Título de seção</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="section-header">
+                <span class="section-eyebrow">Conheça a PetWeb</span>
+                <h2 class="section-title">Cada visita é uma experiência completa de cuidado.</h2>
+                <p class="section-subtitle">Combinamos veterinários certificados e tecnologia de ponta para tornar cada agendamento simples e seguro.</p>
+              </div>
+            </div>
+<pre class="ds-demo__code"><code>&lt;div class="section-header"&gt;
+  &lt;span class="section-eyebrow"&gt;Conheça a PetWeb&lt;/span&gt;
+  &lt;h2 class="section-title"&gt;Cada visita é uma experiência completa.&lt;/h2&gt;
+  &lt;p class="section-subtitle"&gt;Combinamos veterinários e tecnologia.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Texto com gradiente</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <h1 class="gradient-text" style="margin: 0;">Texto destacado em gradiente</h1>
+            </div>
+<pre class="ds-demo__code"><code>&lt;h1 class="gradient-text"&gt;Texto destacado em gradiente&lt;/h1&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ESPACAMENTO ============ -->
+      <section id="espacamento" class="ds-section">
+        <h2 class="ds-section__title">Espaçamento</h2>
+        <p class="ds-section__lead">Escala consistente baseada em múltiplos de 0.25rem (4px). Use sempre tokens, nunca valores hardcoded.</p>
+
+        <div class="ds-stack">
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-1)"></span><span class="ds-spacing-bar__label">--space-1</span><span class="ds-spacing-bar__hint">0.25rem · 4px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-2)"></span><span class="ds-spacing-bar__label">--space-2</span><span class="ds-spacing-bar__hint">0.5rem · 8px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-3)"></span><span class="ds-spacing-bar__label">--space-3</span><span class="ds-spacing-bar__hint">0.75rem · 12px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-4)"></span><span class="ds-spacing-bar__label">--space-4</span><span class="ds-spacing-bar__hint">1rem · 16px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-5)"></span><span class="ds-spacing-bar__label">--space-5</span><span class="ds-spacing-bar__hint">1.25rem · 20px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-6)"></span><span class="ds-spacing-bar__label">--space-6</span><span class="ds-spacing-bar__hint">1.5rem · 24px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-8)"></span><span class="ds-spacing-bar__label">--space-8</span><span class="ds-spacing-bar__hint">2rem · 32px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-10)"></span><span class="ds-spacing-bar__label">--space-10</span><span class="ds-spacing-bar__hint">2.5rem · 40px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-12)"></span><span class="ds-spacing-bar__label">--space-12</span><span class="ds-spacing-bar__hint">3rem · 48px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-16)"></span><span class="ds-spacing-bar__label">--space-16</span><span class="ds-spacing-bar__hint">4rem · 64px</span></div>
+          <div class="ds-spacing-bar"><span class="ds-spacing-bar__chip" style="width: var(--space-20)"></span><span class="ds-spacing-bar__label">--space-20</span><span class="ds-spacing-bar__hint">5rem · 80px</span></div>
+        </div>
+      </section>
+
+      <!-- ============ RAIOS ============ -->
+      <section id="raios" class="ds-section">
+        <h2 class="ds-section__title">Raios &amp; Bordas</h2>
+        <p class="ds-section__lead">Cinco níveis de arredondamento cobrem desde inputs até pílulas.</p>
+
+        <div class="ds-token-grid">
+          <div class="ds-radius-card" style="border-radius: var(--radius-sm);">--radius-sm · 6px</div>
+          <div class="ds-radius-card" style="border-radius: var(--radius-md);">--radius-md · 12px</div>
+          <div class="ds-radius-card" style="border-radius: var(--radius-lg);">--radius-lg · 20px</div>
+          <div class="ds-radius-card" style="border-radius: var(--radius-xl);">--radius-xl · 28px</div>
+          <div class="ds-radius-card" style="border-radius: var(--radius-full);">--radius-full · pill</div>
+        </div>
+      </section>
+
+      <!-- ============ SOMBRAS ============ -->
+      <section id="sombras" class="ds-section">
+        <h2 class="ds-section__title">Sombras</h2>
+        <p class="ds-section__lead">Eleva elementos em camadas previsíveis. As sombras coloridas (CTA e Primary) acompanham o gradiente do botão.</p>
+
+        <div class="ds-token-grid">
+          <div class="ds-token-card">
+            <div class="ds-shadow-card" style="box-shadow: var(--shadow-xs);"></div>
+            <strong style="margin-top: var(--space-3)">--shadow-xs</strong>
+            <span>Inputs e cards muito sutis</span>
+          </div>
+          <div class="ds-token-card">
+            <div class="ds-shadow-card" style="box-shadow: var(--shadow-sm);"></div>
+            <strong style="margin-top: var(--space-3)">--shadow-sm</strong>
+            <span>Header com scroll, cards leves</span>
+          </div>
+          <div class="ds-token-card">
+            <div class="ds-shadow-card" style="box-shadow: var(--shadow-md);"></div>
+            <strong style="margin-top: var(--space-3)">--shadow-md</strong>
+            <span>Painéis e elementos elevados</span>
+          </div>
+          <div class="ds-token-card">
+            <div class="ds-shadow-card" style="box-shadow: var(--shadow-lg);"></div>
+            <strong style="margin-top: var(--space-3)">--shadow-lg</strong>
+            <span>Modais e toasts</span>
+          </div>
+          <div class="ds-token-card">
+            <div class="ds-shadow-card" style="box-shadow: var(--shadow-cta);"></div>
+            <strong style="margin-top: var(--space-3)">--shadow-cta</strong>
+            <span>Botão CTA rosa</span>
+          </div>
+          <div class="ds-token-card">
+            <div class="ds-shadow-card" style="box-shadow: var(--shadow-primary);"></div>
+            <strong style="margin-top: var(--space-3)">--shadow-primary</strong>
+            <span>Botão primário índigo</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BOTOES ============ -->
+      <section id="botoes" class="ds-section">
+        <h2 class="ds-section__title">Botões</h2>
+        <p class="ds-section__lead">Botões pílula com altura mínima de 44px e seis variantes semânticas.</p>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Variantes</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview">
+              <button class="btn btn-primary" type="button">Primary</button>
+              <button class="btn btn-cta" type="button">Call to Action</button>
+              <button class="btn btn-outline" type="button">Outline</button>
+              <button class="btn btn-ghost" type="button">Ghost</button>
+              <button class="btn btn-danger" type="button">Danger</button>
+            </div>
+<pre class="ds-demo__code"><code>&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-cta"&gt;Call to Action&lt;/button&gt;
+&lt;button class="btn btn-outline"&gt;Outline&lt;/button&gt;
+&lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Tamanhos</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview">
+              <button class="btn btn-primary btn-sm" type="button">Small</button>
+              <button class="btn btn-primary" type="button">Default</button>
+              <button class="btn btn-primary btn-lg" type="button">Large</button>
+            </div>
+<pre class="ds-demo__code"><code>&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
+&lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Estado de carregamento</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview">
+              <button class="btn btn-primary loading" type="button">Salvando…</button>
+              <button class="btn btn-cta loading" type="button">Confirmar</button>
+            </div>
+<pre class="ds-demo__code"><code>&lt;button class="btn btn-primary loading"&gt;Salvando…&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Botão Outline em fundo escuro</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--dark">
+              <a class="btn-outline-light" href="#">Saiba mais</a>
+              <a class="btn btn-cta" href="#">Agendar avaliação</a>
+            </div>
+<pre class="ds-demo__code"><code>&lt;a class="btn-outline-light" href="#"&gt;Saiba mais&lt;/a&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FORMULARIOS ============ -->
+      <section id="formularios" class="ds-section">
+        <h2 class="ds-section__title">Formulários</h2>
+        <p class="ds-section__lead">Inputs, selects e textareas com 48px de altura mínima, validação visual e foco com ring rosa.</p>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Campo padrão</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="field" style="max-width: 420px;">
+                <label class="field__label" for="ds-name">Nome do tutor</label>
+                <input class="field__input" id="ds-name" type="text" placeholder="Ex.: Ana Silva">
+                <small class="field__hint">Como você prefere ser chamado(a) na clínica.</small>
+              </div>
+            </div>
+<pre class="ds-demo__code"><code>&lt;div class="field"&gt;
+  &lt;label class="field__label" for="name"&gt;Nome do tutor&lt;/label&gt;
+  &lt;input class="field__input" id="name" type="text"&gt;
+  &lt;small class="field__hint"&gt;Texto de ajuda&lt;/small&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Estados de validação</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block" style="display: grid; gap: var(--space-4); max-width: 480px;">
+              <div class="field field--valid">
+                <label class="field__label" for="ds-email-ok">E-mail</label>
+                <input class="field__input" id="ds-email-ok" type="email" value="ana@petweb.com">
+              </div>
+              <div class="field field--invalid">
+                <label class="field__label" for="ds-email-err">Senha</label>
+                <input class="field__input" id="ds-email-err" type="password" value="123">
+                <span class="field__error">A senha deve ter pelo menos 8 caracteres.</span>
+              </div>
+            </div>
+<pre class="ds-demo__code"><code>&lt;div class="field field--valid"&gt; … &lt;/div&gt;
+&lt;div class="field field--invalid"&gt;
+  …
+  &lt;span class="field__error"&gt;A senha deve ter pelo menos 8 caracteres.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Select &amp; Textarea</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block" style="display: grid; gap: var(--space-4); max-width: 480px;">
+              <div class="field">
+                <label class="field__label" for="ds-pet">Espécie do pet</label>
+                <select class="field__input" id="ds-pet">
+                  <option>Cachorro</option>
+                  <option>Gato</option>
+                  <option>Ave</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field__label" for="ds-obs">Observações</label>
+                <textarea class="field__input" id="ds-obs" rows="3" placeholder="Algo que devemos saber sobre o pet?"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Indicador de força de senha</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="password-strength" style="max-width: 420px;">
+                <span style="width: 70%; background: var(--clr-status-pending);"></span>
+              </div>
+            </div>
+<pre class="ds-demo__code"><code>&lt;div class="password-strength"&gt;&lt;span style="width:70%"&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Checkboxes em linha</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="day-checkboxes">
+                <label class="day-check"><input type="checkbox" checked> Seg</label>
+                <label class="day-check"><input type="checkbox" checked> Ter</label>
+                <label class="day-check"><input type="checkbox"> Qua</label>
+                <label class="day-check"><input type="checkbox" checked> Qui</label>
+                <label class="day-check"><input type="checkbox"> Sex</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BADGES ============ -->
+      <section id="badges" class="ds-section">
+        <h2 class="ds-section__title">Badges &amp; Status</h2>
+        <p class="ds-section__lead">Etiquetas para sinalizar estado de agendamentos, categorias e elementos premium.</p>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Status de agendamento</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview">
+              <span class="badge badge--pending">Pendente</span>
+              <span class="badge badge--confirmed">Confirmado</span>
+              <span class="badge badge--ongoing">Em andamento</span>
+              <span class="badge badge--done">Concluído</span>
+              <span class="badge badge--cancelled">Cancelado</span>
+            </div>
+<pre class="ds-demo__code"><code>&lt;span class="badge badge--pending"&gt;Pendente&lt;/span&gt;
+&lt;span class="badge badge--confirmed"&gt;Confirmado&lt;/span&gt;
+&lt;span class="badge badge--ongoing"&gt;Em andamento&lt;/span&gt;
+&lt;span class="badge badge--done"&gt;Concluído&lt;/span&gt;
+&lt;span class="badge badge--cancelled"&gt;Cancelado&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Pílula informativa</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview">
+              <span class="badge badge--pill">Nova Experiência PetWeb</span>
+              <span class="badge badge--pill">Premium</span>
+            </div>
+<pre class="ds-demo__code"><code>&lt;span class="badge badge--pill"&gt;Nova Experiência PetWeb&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CARDS ============ -->
+      <section id="cards" class="ds-section">
+        <h2 class="ds-section__title">Cards</h2>
+        <p class="ds-section__lead">Containers padronizados que sustentam serviços, etapas e depoimentos.</p>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Service Card</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <article class="service-card" style="max-width: 360px;">
+                <div class="service-card__icon">🐾</div>
+                <h3 class="service-card__name">Banho &amp; Tosa</h3>
+                <p class="service-card__desc">Cuidado completo com produtos hipoalergênicos para pelagem brilhante e saudável.</p>
+                <div class="service-card__footer">
+                  <span class="service-card__price">R$ 89</span>
+                  <span class="service-card__duration">60 min</span>
+                </div>
+              </article>
+            </div>
+<pre class="ds-demo__code"><code>&lt;article class="service-card"&gt;
+  &lt;div class="service-card__icon"&gt;🐾&lt;/div&gt;
+  &lt;h3 class="service-card__name"&gt;Banho &amp; Tosa&lt;/h3&gt;
+  &lt;p class="service-card__desc"&gt;Cuidado completo…&lt;/p&gt;
+  &lt;div class="service-card__footer"&gt;
+    &lt;span class="service-card__price"&gt;R$ 89&lt;/span&gt;
+    &lt;span class="service-card__duration"&gt;60 min&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Step Card</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <article class="step-card" style="max-width: 360px;">
+                <div class="step-card__icon">1</div>
+                <div class="step-card__content">
+                  <h3>Crie sua conta</h3>
+                  <p>Em menos de 2 minutos você cadastra seu pet e está pronto para agendar.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Testimonial Card</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <article class="testimonial-card" style="max-width: 420px;">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <blockquote>“Atendimento impecável. Minha cachorra adorou o banho e o app é simples de usar.”</blockquote>
+                <div class="testimonial-card__author">
+                  <div class="avatar">AS</div>
+                  <div>
+                    <strong>Ana Silva</strong>
+                    <div style="color: var(--clr-neutral-500); font-size: var(--text-sm);">Tutora da Mel</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Content Panel (dashboard)</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="content-panel">
+                <div class="panel-title-row">
+                  <h3 style="margin: 0; color: var(--clr-primary-900);">Próximos agendamentos</h3>
+                  <button class="btn btn-primary btn-sm" type="button">Novo</button>
+                </div>
+                <p style="color: var(--clr-neutral-500); margin-top: var(--space-2);">Visualize e gerencie os atendimentos agendados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Stat Card (admin)</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="admin-stats-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+                <div class="admin-stat-card" style="padding: var(--space-5);">
+                  <strong style="display:block; font-size: var(--text-3xl); color: var(--clr-primary-900);">128</strong>
+                  <p style="margin: 0; color: var(--clr-neutral-500);">Agendamentos</p>
+                </div>
+                <div class="admin-stat-card" style="padding: var(--space-5);">
+                  <strong style="display:block; font-size: var(--text-3xl); color: var(--clr-primary-900);">42</strong>
+                  <p style="margin: 0; color: var(--clr-neutral-500);">Pets ativos</p>
+                </div>
+                <div class="admin-stat-card" style="padding: var(--space-5);">
+                  <strong style="display:block; font-size: var(--text-3xl); color: var(--clr-success);">96%</strong>
+                  <p style="margin: 0; color: var(--clr-neutral-500);">Taxa de retorno</p>
+                </div>
+                <div class="admin-stat-card" style="padding: var(--space-5);">
+                  <strong style="display:block; font-size: var(--text-3xl); color: var(--clr-accent-600);">R$ 12k</strong>
+                  <p style="margin: 0; color: var(--clr-neutral-500);">Faturamento</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ AVATARES ============ -->
+      <section id="avatares" class="ds-section">
+        <h2 class="ds-section__title">Avatares</h2>
+        <p class="ds-section__lead">Tamanhos pequeno (32px), padrão (44px) e grande (56px). Suporta agrupamento sobreposto.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview">
+            <div class="avatar">AS</div>
+            <div class="avatar" style="background: var(--clr-accent-500); color: var(--clr-white);">JM</div>
+            <div class="avatar" style="background: var(--clr-primary-500); color: var(--clr-white);">CR</div>
+            <div class="avatars-group">
+              <img src="https://ui-avatars.com/api/?name=Ana&background=E0E7FF&color=312E81" alt="Ana" class="avatar-small">
+              <img src="https://ui-avatars.com/api/?name=Carlos&background=FBCFE8&color=DB2777" alt="Carlos" class="avatar-small">
+              <img src="https://ui-avatars.com/api/?name=Julia&background=D1D5DB&color=374151" alt="Julia" class="avatar-small">
+            </div>
+            <img class="avatar-large" src="https://ui-avatars.com/api/?name=Pet+Web&background=4F46E5&color=FFFFFF&size=128" alt="Avatar grande">
+          </div>
+<pre class="ds-demo__code"><code>&lt;div class="avatar"&gt;AS&lt;/div&gt;
+&lt;div class="avatars-group"&gt;
+  &lt;img class="avatar-small" src="..." alt="Ana"&gt;
+  &lt;img class="avatar-small" src="..." alt="Carlos"&gt;
+&lt;/div&gt;
+&lt;img class="avatar-large" src="..." alt="..."&gt;</code></pre>
+        </div>
+      </section>
+
+      <!-- ============ NAVEGACAO ============ -->
+      <section id="navegacao" class="ds-section">
+        <h2 class="ds-section__title">Navegação</h2>
+        <p class="ds-section__lead">Links de navegação primária e elementos de sessão do usuário.</p>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Nav links</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview">
+              <ul class="nav__list" style="padding: 0; margin: 0; list-style: none;">
+                <li><a class="nav__link active" href="#">Home</a></li>
+                <li><a class="nav__link" href="#">Serviços</a></li>
+                <li><a class="nav__link" href="#">Como Funciona</a></li>
+                <li><a class="nav__link" href="#">Depoimentos</a></li>
+              </ul>
+            </div>
+<pre class="ds-demo__code"><code>&lt;ul class="nav__list"&gt;
+  &lt;li&gt;&lt;a class="nav__link active" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class="nav__link" href="#"&gt;Serviços&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Session pill</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview">
+              <span class="session-pill">Olá, Ana 👋</span>
+              <span class="session-pill">Plano Premium</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ABAS E FILTROS ============ -->
+      <section id="abas" class="ds-section">
+        <h2 class="ds-section__title">Abas &amp; Filtros</h2>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">User tabs</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="user-tabs" style="border-bottom: none; padding: 0;">
+                <button class="user-tab active" type="button">Próximos</button>
+                <button class="user-tab" type="button">Histórico</button>
+                <button class="user-tab" type="button">Pets</button>
+                <button class="user-tab user-tab--cta" type="button">+ Novo agendamento</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Quick filters</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="quick-filters" style="margin: 0;">
+                <button class="quick-filter-btn active" type="button">Todos</button>
+                <button class="quick-filter-btn quick-filter-btn--pending" type="button">Pendentes</button>
+                <button class="quick-filter-btn" type="button">Hoje</button>
+                <button class="quick-filter-btn" type="button">Esta semana</button>
+                <button class="quick-filter-btn" type="button">Concluídos</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TIME SLOTS ============ -->
+      <section id="timeslots" class="ds-section">
+        <h2 class="ds-section__title">Time Slots</h2>
+        <p class="ds-section__lead">Pílulas para seleção de horários. Suportam estados padrão, selecionado e desabilitado.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview ds-demo__preview--block">
+            <div class="time-slots-grid" style="grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));">
+              <button class="time-slot" type="button">09:00</button>
+              <button class="time-slot" type="button">09:30</button>
+              <button class="time-slot is-selected" type="button">10:00<small>Selecionado</small></button>
+              <button class="time-slot" type="button">10:30</button>
+              <button class="time-slot" type="button" disabled>11:00<small>Indisponível</small></button>
+              <button class="time-slot" type="button">11:30</button>
+              <button class="time-slot" type="button">14:00</button>
+              <button class="time-slot" type="button" disabled>14:30<small>Indisponível</small></button>
+            </div>
+          </div>
+<pre class="ds-demo__code"><code>&lt;button class="time-slot is-selected"&gt;10:00&lt;/button&gt;
+&lt;button class="time-slot" disabled&gt;11:00&lt;small&gt;Indisponível&lt;/small&gt;&lt;/button&gt;</code></pre>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Availability days</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="availability-days" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="availability-day availability-day--disponivel">
+                  <strong>Seg 06</strong>
+                  <span>Disponível</span>
+                  <small>5 horários</small>
+                </div>
+                <div class="availability-day availability-day--lotado">
+                  <strong>Ter 07</strong>
+                  <span style="color: var(--clr-warning);">Quase lotado</span>
+                  <small>1 horário</small>
+                </div>
+                <div class="availability-day is-selected availability-day--disponivel">
+                  <strong>Qua 08</strong>
+                  <span>Selecionado</span>
+                  <small>3 horários</small>
+                </div>
+                <div class="availability-day availability-day--fechado">
+                  <strong>Qui 09</strong>
+                  <span>Fechado</span>
+                  <small>—</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TOGGLES ============ -->
+      <section id="toggles" class="ds-section">
+        <h2 class="ds-section__title">Toggles</h2>
+        <p class="ds-section__lead">Switch usado em configurações de horário e preferências.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview">
+            <label class="schedule-toggle">
+              <input type="checkbox" checked>
+              <span class="schedule-toggle__track"></span>
+              <span class="schedule-toggle__label">Aberto</span>
+            </label>
+            <label class="schedule-toggle">
+              <input type="checkbox">
+              <span class="schedule-toggle__track"></span>
+              <span class="schedule-toggle__label">Fechado</span>
+            </label>
+          </div>
+<pre class="ds-demo__code"><code>&lt;label class="schedule-toggle"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="schedule-toggle__track"&gt;&lt;/span&gt;
+  &lt;span class="schedule-toggle__label"&gt;Aberto&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+        </div>
+      </section>
+
+      <!-- ============ DROPDOWN ============ -->
+      <section id="dropdown" class="ds-section">
+        <h2 class="ds-section__title">Dropdown</h2>
+        <p class="ds-section__lead">Menu de perfil e ações secundárias.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview" style="min-height: 280px; align-items: flex-start;">
+            <div class="dropdown active" style="position: relative;">
+              <button class="header__profile-toggle" type="button">
+                <span class="avatar header__avatar" style="background: var(--clr-primary-500); color: var(--clr-white);">AS</span>
+                <span class="header__profile-name" style="display: inline;">Ana Silva</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="dropdown-menu" style="position: relative; opacity: 1; visibility: visible; pointer-events: auto; transform: none; margin-top: var(--space-3);">
+                <div class="dropdown-header">
+                  <strong>Ana Silva</strong>
+                  <small>ana@petweb.com</small>
+                </div>
+                <button class="dropdown-item" type="button">Meu perfil</button>
+                <button class="dropdown-item" type="button">Meus pets</button>
+                <button class="dropdown-item" type="button">Configurações</button>
+                <button class="dropdown-item text-danger" type="button">Sair</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TABELAS ============ -->
+      <section id="tabelas" class="ds-section">
+        <h2 class="ds-section__title">Tabelas</h2>
+        <p class="ds-section__lead">Listagens administrativas com cabeçalho discreto e ações inline.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview ds-demo__preview--block">
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Pet</th>
+                    <th>Tutor</th>
+                    <th>Serviço</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Pet"><strong>Mel</strong></td>
+                    <td data-label="Tutor">Ana Silva</td>
+                    <td data-label="Serviço">Banho &amp; Tosa</td>
+                    <td data-label="Status"><span class="badge badge--confirmed">Confirmado</span></td>
+                    <td data-label="Ações">
+                      <div class="table-actions">
+                        <button class="btn btn-ghost btn-sm" type="button">Editar</button>
+                        <button class="btn btn-danger btn-sm" type="button">Cancelar</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Pet"><strong>Thor</strong></td>
+                    <td data-label="Tutor">Carlos Mendes</td>
+                    <td data-label="Serviço">Vacinação</td>
+                    <td data-label="Status"><span class="badge badge--pending">Pendente</span></td>
+                    <td data-label="Ações">
+                      <div class="table-actions">
+                        <button class="btn btn-ghost btn-sm" type="button">Editar</button>
+                        <button class="btn btn-danger btn-sm" type="button">Cancelar</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Pet"><strong>Luna</strong></td>
+                    <td data-label="Tutor">Júlia Rocha</td>
+                    <td data-label="Serviço">Consulta</td>
+                    <td data-label="Status"><span class="badge badge--done">Concluído</span></td>
+                    <td data-label="Ações">
+                      <div class="table-actions">
+                        <button class="btn btn-ghost btn-sm" type="button">Ver</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TOASTS ============ -->
+      <section id="toasts" class="ds-section">
+        <h2 class="ds-section__title">Toasts</h2>
+        <p class="ds-section__lead">Notificações temporárias para confirmar ações ou alertar erros.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview ds-demo__preview--block" style="display: grid; gap: var(--space-3);">
+            <div class="toast toast--visible toast--success" style="position: static;">Agendamento confirmado com sucesso.</div>
+            <div class="toast toast--visible toast--error" style="position: static;">Não foi possível salvar. Tente novamente.</div>
+            <div class="toast toast--visible toast--info" style="position: static;">Você tem 2 agendamentos hoje.</div>
+            <div class="toast toast--visible" style="position: static;">Notificação padrão.</div>
+          </div>
+<pre class="ds-demo__code"><code>&lt;div class="toast toast--visible toast--success"&gt;…&lt;/div&gt;
+&lt;div class="toast toast--visible toast--error"&gt;…&lt;/div&gt;
+&lt;div class="toast toast--visible toast--info"&gt;…&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <!-- ============ ALERTAS ============ -->
+      <section id="alertas" class="ds-section">
+        <h2 class="ds-section__title">Alertas &amp; Estado vazio</h2>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Auth alert</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="auth-alert" style="margin: 0; max-width: 480px;">E-mail ou senha incorretos. Verifique seus dados.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Empty state</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="empty-state">Nenhum agendamento encontrado para o período selecionado.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Confirmação salva</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview">
+              <span class="config-saved-indicator">✓ Configurações salvas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MODAIS ============ -->
+      <section id="modais" class="ds-section">
+        <h2 class="ds-section__title">Modais</h2>
+        <p class="ds-section__lead">Estrutura de header, body e footer reutilizável dentro de qualquer dialog.</p>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Modal padrão</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block" style="background: var(--clr-neutral-150);">
+              <div style="background: var(--clr-white); border-radius: var(--radius-md); width: min(560px, 100%); margin: 0 auto; box-shadow: var(--shadow-lg);">
+                <div class="modal__header">
+                  <h3 class="modal__title">Editar agendamento</h3>
+                  <button class="modal__close" type="button" aria-label="Fechar">×</button>
+                </div>
+                <div class="modal__body">
+                  <p style="margin: 0; color: var(--clr-neutral-700);">Atualize os detalhes do agendamento abaixo. As alterações são notificadas ao tutor por e-mail.</p>
+                  <div class="field" style="margin: 0;">
+                    <label class="field__label" for="ds-modal-input">Observações</label>
+                    <input class="field__input" id="ds-modal-input" type="text" placeholder="Ex.: chegou 10 minutos antes">
+                  </div>
+                </div>
+                <div class="modal__footer">
+                  <button class="btn btn-ghost" type="button">Cancelar</button>
+                  <button class="btn btn-primary" type="button">Salvar alterações</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Confirm dialog</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block" style="background: var(--clr-neutral-150);">
+              <div style="background: var(--clr-white); border-radius: var(--radius-md); width: min(500px, 100%); margin: 0 auto; box-shadow: var(--shadow-lg);">
+                <div class="modal__header">
+                  <div class="confirm-dialog__title-row">
+                    <span class="confirm-dialog__icon">!</span>
+                    <h3 class="modal__title">Cancelar agendamento?</h3>
+                  </div>
+                </div>
+                <div class="modal__body modal__body--confirm">
+                  <p class="confirm-dialog__message">Esta ação não pode ser desfeita.</p>
+                  <p class="confirm-dialog__detail">O tutor receberá um e-mail informando o cancelamento.</p>
+                </div>
+                <div class="modal__footer">
+                  <button class="btn btn-ghost" type="button">Voltar</button>
+                  <button class="btn btn-danger" type="button">Sim, cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROGRESSO ============ -->
+      <section id="progresso" class="ds-section">
+        <h2 class="ds-section__title">Progresso</h2>
+        <p class="ds-section__lead">Barra usada nos wizards multi-etapa de agendamento.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview ds-demo__preview--block" style="display: grid; gap: var(--space-4);">
+            <div class="wizard__progress"><span style="width: 25%;"></span></div>
+            <div class="wizard__progress"><span style="width: 50%;"></span></div>
+            <div class="wizard__progress"><span style="width: 75%;"></span></div>
+            <div class="wizard__progress"><span style="width: 100%;"></span></div>
+          </div>
+<pre class="ds-demo__code"><code>&lt;div class="wizard__progress"&gt;&lt;span style="width:50%"&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Wizard select cards</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block">
+              <div class="wizard-select-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+                <button class="wizard-select-card" type="button">
+                  <strong>🐶 Mel</strong>
+                  <span>Golden Retriever · 4 anos</span>
+                  <small>Última visita há 2 meses</small>
+                </button>
+                <button class="wizard-select-card is-selected" type="button">
+                  <strong>🐱 Luna</strong>
+                  <span>Persa · 2 anos</span>
+                  <small>Última visita há 1 semana</small>
+                </button>
+                <button class="wizard-select-card" type="button">
+                  <strong>🐶 Thor</strong>
+                  <span>Husky Siberiano · 6 anos</span>
+                  <small>Vacinação pendente</small>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ HERO ============ -->
+      <section id="hero" class="ds-section">
+        <h2 class="ds-section__title">Hero</h2>
+        <p class="ds-section__lead">Estatísticas em destaque para usar dentro de heros sobre fundo escuro.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview ds-demo__preview--block" style="background: var(--gradient-hero); padding: var(--space-8);">
+            <div class="hero__stats" style="margin: 0;">
+              <div class="hero-stat">
+                <strong>1.2k+</strong>
+                <span>Tutores ativos</span>
+              </div>
+              <div class="hero-stat">
+                <strong>96%</strong>
+                <span>Avaliações 5 estrelas</span>
+              </div>
+              <div class="hero-stat">
+                <strong>24/7</strong>
+                <span>Suporte ao tutor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-subsection">
+          <h3 class="ds-subsection__title">Hero eyebrow</h3>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--dark">
+              <span class="hero__eyebrow">✨ Nova Experiência PetWeb</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECOES ============ -->
+      <section id="secoes" class="ds-section">
+        <h2 class="ds-section__title">Variantes de seção</h2>
+        <p class="ds-section__lead">Backgrounds reutilizáveis: branco, claro e roxo premium.</p>
+
+        <div class="ds-stack">
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block section--white" style="padding: var(--space-8);">
+              <div class="section-header section-header--center">
+                <span class="section-eyebrow">Section White</span>
+                <h2 class="section-title">Branco padrão</h2>
+                <p class="section-subtitle">Para destacar conteúdo entre seções de fundo neutro.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ds-demo">
+            <div class="ds-demo__preview ds-demo__preview--block section--purple" style="padding: var(--space-8); position: relative;">
+              <div class="section-header section-header--center">
+                <span class="section-eyebrow">Section Purple</span>
+                <h2 class="section-title">Roxo premium</h2>
+                <p class="section-subtitle">Ideal para destacar processos e provas sociais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
+      <section id="cta" class="ds-section">
+        <h2 class="ds-section__title">CTA Panels</h2>
+        <p class="ds-section__lead">Painéis de conversão com fundo escuro e botões de alta hierarquia.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview ds-demo__preview--block" style="padding: 0;">
+            <div class="contact-panel" style="border-radius: 0;">
+              <div>
+                <h3 class="section-title" style="color: var(--clr-white);">Pronto para agendar?</h3>
+                <p>Crie sua conta gratuita e ganhe a primeira consulta com 20% de desconto.</p>
+                <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-5);">
+                  <a class="btn btn-cta" href="#">Agendar agora</a>
+                  <a class="btn-outline-light" href="#">Falar com a equipe</a>
+                </div>
+              </div>
+              <div>
+                <div class="info-item">
+                  <span class="info-icon">📞</span>
+                  <div class="info-text">
+                    <strong>Telefone</strong>
+                    <p>(84) 99999-1234</p>
+                  </div>
+                </div>
+                <div class="info-item" style="margin-top: var(--space-4);">
+                  <span class="info-icon">✉️</span>
+                  <div class="info-text">
+                    <strong>E-mail</strong>
+                    <p>contato@petweb.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GLASS ============ -->
+      <section id="glass" class="ds-section">
+        <h2 class="ds-section__title">Glass Cards</h2>
+        <p class="ds-section__lead">Cards translúcidos para sobrepor imagens em heros e seções premium.</p>
+
+        <div class="ds-demo">
+          <div class="ds-demo__preview ds-demo__preview--block" style="background: var(--gradient-hero); padding: var(--space-12); position: relative; min-height: 240px;">
+            <div class="glass-card" style="position: relative; animation: none; left: auto; bottom: auto; display: inline-flex;">
+              <span class="glass-card__icon">🏆</span>
+              <div class="glass-card__text">
+                <strong>1.2k+ pets felizes</strong>
+                <span>Avaliação média 4.9/5</span>
+              </div>
+            </div>
+          </div>
+<pre class="ds-demo__code"><code>&lt;div class="glass-card"&gt;
+  &lt;span class="glass-card__icon"&gt;🏆&lt;/span&gt;
+  &lt;div class="glass-card__text"&gt;
+    &lt;strong&gt;1.2k+ pets felizes&lt;/strong&gt;
+    &lt;span&gt;Avaliação média 4.9/5&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <footer style="margin-top: var(--space-16); padding-top: var(--space-8); border-top: 1px solid var(--clr-neutral-150); color: var(--clr-neutral-500); font-size: var(--text-sm);">
+        Documentação gerada a partir de <code style="font-family: 'SF Mono', Menlo, Consolas, monospace; background: var(--clr-neutral-150); padding: 2px 6px; border-radius: var(--radius-sm);">css/style.css</code>,
+        <code style="font-family: 'SF Mono', Menlo, Consolas, monospace; background: var(--clr-neutral-150); padding: 2px 6px; border-radius: var(--radius-sm);">css/components.css</code> e
+        <code style="font-family: 'SF Mono', Menlo, Consolas, monospace; background: var(--clr-neutral-150); padding: 2px 6px; border-radius: var(--radius-sm);">css/responsive.css</code>.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Highlight ativo na sidebar conforme rolagem
+    (function () {
+      const links = document.querySelectorAll('.ds-sidebar__link');
+      const sections = Array.from(links)
+        .map(a => document.querySelector(a.getAttribute('href')))
+        .filter(Boolean);
+
+      const setActive = (id) => {
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+      sections.forEach(s => observer.observe(s));
+    })();
+  </script>
+</body>
+</html>
