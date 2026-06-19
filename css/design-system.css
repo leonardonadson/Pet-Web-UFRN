@@ -358,13 +358,21 @@
   }
 
   .ds-sidebar {
-    position: static;
-    height: auto;
-    border-right: 0;
-    border-bottom: 1px solid var(--clr-neutral-150);
+    display: none;
   }
 
   .ds-main {
     padding: var(--space-8) var(--space-5);
   }
+}
+
+/* Grupos de navegação do design system dentro do menu mobile */
+.mobile-nav__ds {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mobile-nav__ds .ds-sidebar__group {
+  margin-bottom: 0;
 }
