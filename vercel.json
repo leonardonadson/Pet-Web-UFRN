@@ -4,11 +4,6 @@
   "trailingSlash": false,
   "buildCommand": "npm run build",
   "outputDirectory": ".",
-  "functions": {
-    "api/**/*.js": {
-      "maxDuration": 10
-    }
-  },
   "rewrites": [
     {
       "source": "/api/:path*",
