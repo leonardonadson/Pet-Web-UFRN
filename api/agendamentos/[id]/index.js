@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     const pet = await sql`SELECT id FROM pets WHERE id = ${petId} AND id_usuario = ${user.id}`;
     if (!pet || pet.length === 0) return sendError(res, 403, 'Pet não pertence ao usuário autenticado.');
 
-    const service = await sql`SELECT id FROM servicos WHERE id = ${servicoId} AND ativo = 1`;
+    const service = await sql`SELECT id FROM servicos WHERE id = ${servicoId} AND ativo = TRUE`;
     if (!service || service.length === 0) return sendError(res, 400, 'Serviço inválido ou inativo.');
 
     const dateError = await validateBusinessDateAsync(sql, dataHora);

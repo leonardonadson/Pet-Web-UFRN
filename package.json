@@ -6,7 +6,7 @@
   "description": "PetWeb - sistema web para pet shop com frontend estático e API serverless na Vercel.",
   "scripts": {
     "build": "npm run lint",
-    "dev": "npx vercel dev",
+    "dev:vercel": "npx vercel dev",
     "start": "node local-server.js",
     "dev:local": "node local-server.js",
     "lint": "node --check js/script.js && node --check js/api.js && node --check js/auth.js && node --check js/dashboard.js && node --check js/agendamento.js && node --check js/admin.js",
@@ -18,6 +18,6 @@
     "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {
-    "vercel": "^34.0.0"
+    "vercel": "^54.15.0"
   }
 }
