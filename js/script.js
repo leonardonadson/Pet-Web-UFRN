@@ -77,7 +77,7 @@ function renderAuthNavigation() {
 
     target.innerHTML = `
       <a class="btn btn-ghost btn-sm" href="login.html">Entrar</a>
-      <a class="btn btn-cta btn-sm" href="cadastro.html">Cadastre-se</a>
+      <a class="btn btn-cta btn-sm" href="agendamento.html">Agende Agora</a>
     `;
   });
 }
@@ -112,7 +112,7 @@ function renderAuthMobile() {
   } else {
     target.innerHTML = `
       <a href="login.html" class="btn btn-outline" style="width:100%">Entrar</a>
-      <a href="cadastro.html" class="btn btn-cta" style="width:100%">Cadastre-se</a>
+      <a href="agendamento.html" class="btn btn-cta" style="width:100%">Agende Agora</a>
     `;
   }
 }
@@ -123,6 +123,38 @@ function setupLogout() {
     window.PetWebApi?.clearSession?.();
     window.location.href = '/index.html';
   });
+}
+
+async function renderHomeServices() {
+  const target = document.querySelector('[data-home-services]');
+  if (!target || !window.PetWebApi) return;
+
+  try {
+    const data = await window.PetWebApi.apiFetch('/api/servicos', { authRedirect: false });
+    const services = data.servicos || [];
+
+    if (!services.length) {
+      target.innerHTML = '<p class="empty-state">Nenhum serviço ativo no momento.</p>';
+      return;
+    }
+
+    target.innerHTML = services.map((service) => `
+      <a class="service-card reveal is-visible service-card--link" href="agendamento.html?servico=${service.id}" aria-label="Agendar ${service.nome}">
+        <div class="service-card__icons-container" aria-hidden="true" style="display: flex; gap: var(--space-3);">
+          ${getServiceSvg(service.icone).map(svg => `<div class="service-card__icon">${svg}</div>`).join('')}
+        </div>
+        <h3 class="service-card__name">${service.nome}</h3>
+        <p class="service-card__desc">${service.descricao || 'Serviço disponível para agendamento online.'}</p>
+        <div class="service-card__footer">
+          <span class="service-card__price">${formatCurrency(service.preco)}</span>
+          <span class="service-card__duration">${service.tempo_estimado} min</span>
+        </div>
+        <span class="service-card__action">Agendar este serviço</span>
+      </a>
+    `).join('');
+  } catch (error) {
+    target.innerHTML = `<p class="empty-state">${error.message}</p>`;
+  }
 }
 
 function setHeaderState() {
@@ -308,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setHeaderState();
   renderAuthNavigation();
   renderAuthMobile();
+  renderHomeServices();
   setupLogout();
   setupMobileNav();
   setupSmoothAnchors();

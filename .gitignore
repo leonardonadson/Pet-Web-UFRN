@@ -1,3 +1,4 @@
 petweb-local.sqlite
 node_modules/
 .env
+.vercel

@@ -1,329 +1,440 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin | PetWeb</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-  </head>
-  <body>
-    <header class="header header--app">
-      <div class="container header__inner">
-        <a class="header__logo" href="index.html"
-          ><svg
-            class="header-brand-mark"
-            width="38"
-            height="38"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            style="margin-right: 4px"
-          >
-            <path
-              d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z"
-              fill="url(#houseGrad)"
-            />
-            <circle cx="20" cy="14" r="3" fill="#FFFFFF" />
-            <defs>
-              <linearGradient id="houseGrad" x1="0" y1="0" x2="40" y2="40">
-                <stop stop-color="#4F46E5" />
-                <stop offset="1" stop-color="#EC4899" />
-              </linearGradient>
-            </defs></svg
-          ><span class="header__logo-text">PetWeb</span></a
-        >
-        <div class="header__app-actions">
-          <div class="header__actions">
-            <div class="dropdown">
-              <button
-                class="header__profile-toggle"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                data-dropdown-toggle
-              >
-                <span
-                  class="avatar"
-                  data-admin-avatar
-                  style="width: 36px; height: 36px; font-size: 14px"
-                  >AD</span
-                >
-                <span class="header__profile-name" data-admin-name
-                  >Administrador</span
-                >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              <div class="dropdown-menu">
-                <div class="dropdown-header">
-                  <strong data-admin-name-full>Administrador</strong>
-                  <small>admin</small>
-                </div>
-                <button
-                  class="dropdown-item text-danger"
-                  type="button"
-                  data-admin-logout
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    <polyline points="16 17 21 12 16 7"></polyline>
-                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                  </svg>
-                  Sair do PetWeb
-                </button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | PetWeb</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="header header--app">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html"><svg class="header-brand-mark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-right: 4px;"><path d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z" fill="url(#houseGrad)"/><circle cx="20" cy="14" r="3" fill="#FFFFFF"/><defs><linearGradient id="houseGrad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#4F46E5"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs></svg><span class="header__logo-text">PetWeb</span></a>
+      <div class="header__app-actions">
+        <div class="header__actions">
+          <div class="dropdown">
+            <button class="header__profile-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle>
+              <span class="avatar" data-admin-avatar style="width:36px;height:36px;font-size:14px">AD</span>
+              <span class="header__profile-name" data-admin-name>Administrador</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="dropdown-menu">
+              <div class="dropdown-header">
+                <strong data-admin-name-full>Administrador</strong>
+                <small>admin</small>
               </div>
+              <button class="dropdown-item text-danger" type="button" data-admin-logout>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                Sair do PetWeb
+              </button>
             </div>
           </div>
         </div>
+        <button class="header__hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
+  <div class="nav-overlay" data-nav-overlay aria-hidden="true"></div>
 
-    <main class="dashboard-layout">
-      <aside class="sidebar" aria-label="Menu administrativo">
-        <button
-          class="sidebar__link active"
-          type="button"
-          data-admin-tab="usuarios"
-        >
-          Usuários
+  <main class="dashboard-layout">
+    <aside class="sidebar" aria-label="Menu administrativo" data-mobile-nav>
+      <div class="mobile-nav__header" style="display: none;">
+        <a class="header__logo" href="index.html" aria-label="PetWeb Home">
+          <svg class="header-brand-mark" width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z" fill="url(#houseGradDrawerAdmin)"/><circle cx="20" cy="14" r="3" fill="#FFFFFF"/><defs><linearGradient id="houseGradDrawerAdmin" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#4F46E5"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs></svg>
+          <span style="font-weight:800;font-size:1.1rem;color:var(--clr-primary-900)">PetWeb</span>
+        </a>
+        <button class="mobile-nav__close" type="button" aria-label="Fechar menu" data-menu-toggle>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
-        <button class="sidebar__link" type="button" data-admin-tab="pets">
-          Pets por Cliente
-        </button>
-        <button class="sidebar__link" type="button" data-admin-tab="tipos-pet">
-          Tipos de Pets
-        </button>
-        <button class="sidebar__link" type="button" data-admin-tab="servicos">
-          Serviços
-        </button>
-      </aside>
+      </div>
+      <button class="sidebar__link active" type="button" data-admin-tab="agenda">Agenda <span class="sidebar__badge" data-pending-badge>0</span></button>
+      <button class="sidebar__link" type="button" data-admin-tab="usuarios">Usuários</button>
+      <button class="sidebar__link" type="button" data-admin-tab="pets">Pets por Cliente</button>
+      <button class="sidebar__link" type="button" data-admin-tab="tipos-pet">Tipos de Pets</button>
+      <button class="sidebar__link" type="button" data-admin-tab="servicos">Serviços</button>
+      <button class="sidebar__link" type="button" data-admin-tab="horarios">Horários</button>
+      <button class="sidebar__link" type="button" data-admin-tab="configuracoes">Configurações</button>
+      
+      <div class="mobile-nav__actions" data-auth-mobile style="margin-top: auto; display: none;"></div>
+    </aside>
 
-      <section class="dashboard-content">
-        <div class="section-header">
-          <p class="section-eyebrow">Admin</p>
-          <h1 class="section-title">Controle do PetWeb</h1>
+    <section class="dashboard-content">
+      <div class="section-header">
+        <p class="section-eyebrow">Admin</p>
+        <h1 class="section-title">Controle do PetWeb</h1>
+      </div>
+
+      <section class="admin-panel active" data-admin-panel="agenda">
+        <div class="admin-stats-grid" data-admin-stats></div>
+        <div class="content-panel">
+          <div class="panel-title-row">
+            <div><p class="section-eyebrow">Agenda</p><h2>Agendamentos</h2></div>
+          </div>
+          <div class="quick-filters" data-quick-filters>
+            <button class="quick-filter-btn active" data-qf="Todos">Todos</button>
+            <button class="quick-filter-btn quick-filter-btn--pending" data-qf="Pendente">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Pendentes (<span data-qf-count>0</span>)</span>
+            </button>
+            <button class="quick-filter-btn" data-qf="Confirmado">Confirmados</button>
+            <button class="quick-filter-btn" data-qf="Em Andamento">Em Andamento</button>
+            <button class="quick-filter-btn" data-qf="Concluído">Concluídos</button>
+            <button class="quick-filter-btn" data-qf="Cancelado">Cancelados</button>
+          </div>
+          <div class="filter-bar">
+            <input class="field__input" type="date" aria-label="Filtrar por data" data-filter-date>
+            <input class="field__input" type="search" placeholder="Buscar cliente, pet ou serviço" aria-label="Buscar" data-filter-search>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead><tr><th>Cliente</th><th>Pet</th><th>Serviço</th><th>Data/Hora</th><th>Status</th><th>Ação</th></tr></thead>
+              <tbody data-admin-appointments></tbody>
+            </table>
+          </div>
         </div>
-
-        <section class="admin-panel active" data-admin-panel="usuarios">
-          <div class="content-panel">
-            <div class="panel-title-row">
-              <div>
-                <p class="section-eyebrow">Usuários</p>
-                <h2>Clientes e administradores</h2>
-              </div>
-              <button class="btn btn-cta btn-sm" type="button" data-new-user>
-                Novo usuário
-              </button>
-            </div>
-            <div class="table-wrapper">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Telefone</th>
-                    <th>Perfil</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-                <tbody data-admin-users></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section class="admin-panel" data-admin-panel="pets">
-          <div class="content-panel">
-            <p class="section-eyebrow">Pets</p>
-            <h2>
-              Animais cadastrados por cliente
-              <small
-                style="
-                  font-weight: 400;
-                  color: var(--clr-neutral-500);
-                  font-size: 13px;
-                "
-              ></small>
-            </h2>
-            <div class="table-wrapper">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Pet</th>
-                    <th>Tutor</th>
-                    <th>Espécie</th>
-                    <th>Raça</th>
-                    <th>Porte</th>
-                  </tr>
-                </thead>
-                <tbody data-admin-pets></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section class="admin-panel" data-admin-panel="tipos-pet">
-          <div class="content-panel">
-            <div class="panel-title-row">
-              <div>
-                <p class="section-eyebrow">Tipos de Pets</p>
-                <h2>
-                  Espécies disponíveis no cadastro
-                  <small
-                    style="
-                      font-weight: 400;
-                      color: var(--clr-neutral-500);
-                      font-size: 13px;
-                    "
-                  ></small>
-                </h2>
-              </div>
-            </div>
-            <div class="table-wrapper">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Nome</th>
-                    <th>Ativo</th>
-                  </tr>
-                </thead>
-                <tbody data-admin-pet-types></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section class="admin-panel" data-admin-panel="servicos">
-          <div class="content-panel">
-            <div class="panel-title-row">
-              <div>
-                <p class="section-eyebrow">Serviços</p>
-                <h2>
-                  Catálogo e preços
-                  <small
-                    style="
-                      font-weight: 400;
-                      color: var(--clr-neutral-500);
-                      font-size: 13px;
-                    "
-                  ></small>
-                </h2>
-              </div>
-            </div>
-            <div class="table-wrapper">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Duração</th>
-                    <th>Ativo</th>
-                  </tr>
-                </thead>
-                <tbody data-admin-services></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
       </section>
-    </main>
 
-    <dialog id="user-dialog">
-      <form method="dialog" data-user-form>
-        <input type="hidden" name="id" />
-        <div class="modal__header">
-          <h2 class="modal__title" data-user-modal-title>Editar cliente</h2>
-          <button class="modal__close" type="button" data-dialog-close>
-            ×
-          </button>
+      <section class="admin-panel" data-admin-panel="usuarios">
+        <div class="content-panel">
+          <div class="panel-title-row">
+            <div><p class="section-eyebrow">Usuários</p><h2>Clientes e administradores</h2></div>
+            <button class="btn btn-cta btn-sm" type="button" data-new-user>Novo usuário</button>
+          </div>
+          <div class="table-wrapper"><table class="data-table"><thead><tr><th>Nome</th><th>E-mail</th><th>Telefone</th><th>Perfil</th><th>Ações</th></tr></thead><tbody data-admin-users></tbody></table></div>
         </div>
-        <div class="modal__body">
-          <label class="field"
-            ><span class="field__label">Nome</span
-            ><input class="field__input" name="nome" required
-          /></label>
-          <label class="field"
-            ><span class="field__label">E-mail</span
-            ><input class="field__input" name="email" type="email" required
-          /></label>
-          <label class="field"
-            ><span class="field__label">Telefone</span
-            ><input class="field__input" name="telefone"
-          /></label>
-          <label class="field"
-            ><span class="field__label">Perfil</span
-            ><select class="field__input" name="tipo_perfil">
-              <option value="cliente">cliente</option>
-              <option value="admin">admin</option>
-            </select></label
-          >
-          <label class="field" data-user-password-field
-            ><span class="field__label">Senha</span
-            ><input
-              class="field__input"
-              name="senha"
-              type="password"
-              minlength="8"
-              placeholder="Opcional. Padrão: PetWeb@123"
-          /></label>
-        </div>
-        <div class="modal__footer">
-          <button class="btn btn-ghost" type="button" data-dialog-close>
-            Cancelar
-          </button>
-          <button class="btn btn-cta" type="submit">Salvar cliente</button>
-        </div>
-      </form>
-    </dialog>
+      </section>
 
-    <dialog id="confirm-dialog" class="confirm-dialog">
+      <section class="admin-panel" data-admin-panel="pets">
+        <div class="content-panel">
+          <p class="section-eyebrow">Pets</p>
+          <h2>Animais cadastrados por cliente</h2>
+          <div class="table-wrapper"><table class="data-table"><thead><tr><th>Pet</th><th>Tutor</th><th>Espécie</th><th>Raça</th><th>Porte</th><th>Ações</th></tr></thead><tbody data-admin-pets></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="tipos-pet">
+        <div class="content-panel">
+          <div class="panel-title-row">
+            <div><p class="section-eyebrow">Tipos de Pets</p><h2>Espécies disponíveis no cadastro</h2></div>
+            <button class="btn btn-cta btn-sm" type="button" data-new-pet-type>Novo tipo</button>
+          </div>
+          <div class="table-wrapper"><table class="data-table"><thead><tr><th>Nome</th><th>Ativo</th><th>Ação</th></tr></thead><tbody data-admin-pet-types></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="servicos">
+        <div class="content-panel">
+          <div class="panel-title-row">
+            <div><p class="section-eyebrow">Serviços</p><h2>Catálogo e preços</h2></div>
+            <button class="btn btn-cta btn-sm" type="button" data-new-service>Novo serviço</button>
+          </div>
+          <div class="table-wrapper"><table class="data-table"><thead><tr><th>Ícone</th><th>Nome</th><th>Preço</th><th>Duração</th><th>Intervalo</th><th>Ativo</th><th>Ação</th></tr></thead><tbody data-admin-services></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="horarios">
+        <div class="content-panel">
+          <p class="section-eyebrow">Horários</p>
+          <h2>Funcionamento padrão por dia</h2>
+          <form data-schedule-form>
+            <div class="schedule-grid" data-admin-schedules></div>
+            <div class="schedule-copy-bar">
+              <label class="field" style="margin:0"><span class="field__label">Copiar de:</span>
+                <select class="field__input" data-copy-source>
+                  <option value="0">Domingo</option><option value="1">Segunda-feira</option><option value="2">Terça-feira</option>
+                  <option value="3">Quarta-feira</option><option value="4">Quinta-feira</option>
+                  <option value="5">Sexta-feira</option><option value="6">Sábado</option>
+                </select>
+              </label>
+              <div class="copy-day-checks">
+                <span class="field__label">Para:</span>
+                <label class="day-check"><input type="checkbox" value="0" data-copy-target> Dom</label>
+                <label class="day-check"><input type="checkbox" value="1" data-copy-target> Seg</label>
+                <label class="day-check"><input type="checkbox" value="2" data-copy-target> Ter</label>
+                <label class="day-check"><input type="checkbox" value="3" data-copy-target> Qua</label>
+                <label class="day-check"><input type="checkbox" value="4" data-copy-target> Qui</label>
+                <label class="day-check"><input type="checkbox" value="5" data-copy-target> Sex</label>
+                <label class="day-check"><input type="checkbox" value="6" data-copy-target> Sáb</label>
+              </div>
+              <button class="btn btn-outline btn-sm" type="button" data-copy-btn>Copiar</button>
+            </div>
+            <button class="btn btn-cta" type="submit">Salvar horários</button>
+          </form>
+        </div>
+        <div class="content-panel">
+          <div class="panel-title-row">
+            <div>
+              <p class="section-eyebrow">Pausas</p>
+              <h2>Intervalos Indisponíveis</h2>
+            </div>
+          </div>
+          <form class="interval-form" data-interval-form>
+            <div class="interval-form-grid">
+              <label class="field" style="margin:0"><span class="field__label">Título</span><input class="field__input" name="titulo" placeholder="Ex: Almoço" required></label>
+              <label class="field" style="margin:0"><span class="field__label">Início</span><input class="field__input" type="time" name="inicio" required></label>
+              <label class="field" style="margin:0"><span class="field__label">Fim</span><input class="field__input" type="time" name="fim" required></label>
+            </div>
+            <div class="field" style="margin-bottom: var(--space-4);">
+              <span class="field__label">Dias da semana</span>
+              <div class="day-checkboxes">
+                <label class="day-check"><input type="checkbox" name="dias" value="1"> Seg</label>
+                <label class="day-check"><input type="checkbox" name="dias" value="2"> Ter</label>
+                <label class="day-check"><input type="checkbox" name="dias" value="3"> Qua</label>
+                <label class="day-check"><input type="checkbox" name="dias" value="4"> Qui</label>
+                <label class="day-check"><input type="checkbox" name="dias" value="5"> Sex</label>
+                <label class="day-check"><input type="checkbox" name="dias" value="6"> Sáb</label>
+                <label class="day-check"><input type="checkbox" name="dias" value="0"> Dom</label>
+              </div>
+            </div>
+            <button class="btn btn-cta btn-sm" type="submit">Adicionar intervalo</button>
+          </form>
+          <div class="table-wrapper" style="margin-top: var(--space-5);">
+            <table class="data-table">
+              <thead><tr><th>Dia</th><th>Título</th><th>Início</th><th>Fim</th><th>Ação</th></tr></thead>
+              <tbody data-admin-intervals></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="content-panel">
+          <div class="panel-title-row">
+            <div>
+              <p class="section-eyebrow">Exceções</p>
+              <h2>Feriados, fechamentos e horários especiais</h2>
+            </div>
+          </div>
+          <form class="exception-form-grid" data-exception-form>
+            <label class="field"><span class="field__label">Data</span><input class="field__input" type="date" name="data" required></label>
+            <label class="field"><span class="field__label">Título</span><input class="field__input" name="titulo" placeholder="Feriado municipal" required></label>
+            <label class="field"><span class="field__label">Tipo</span><select class="field__input" name="tipo" data-exception-type><option value="fechado">Fechado</option><option value="horario_especial">Horário especial</option></select></label>
+            <label class="field"><span class="field__label">Recorrente anual</span><select class="field__input" name="recorrente_anual"><option value="0">Não</option><option value="1">Sim</option></select></label>
+            <label class="field" data-exception-time><span class="field__label">Abre</span><input class="field__input" type="time" name="abre"></label>
+            <label class="field" data-exception-time><span class="field__label">Fecha</span><input class="field__input" type="time" name="fecha"></label>
+            <label class="field" data-exception-time><span class="field__label">Último início</span><input class="field__input" type="time" name="ultimo_inicio"></label>
+            <button class="btn btn-cta" type="submit">Adicionar exceção</button>
+          </form>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead><tr><th>Data</th><th>Título</th><th>Tipo</th><th>Horário</th><th>Recorrente</th><th>Ação</th></tr></thead>
+              <tbody data-admin-exceptions></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="content-panel">
+          <div class="panel-title-row">
+            <div>
+              <p class="section-eyebrow">Visualização</p>
+              <h2>Como o cliente vê a agenda</h2>
+            </div>
+            <div class="preview-date-nav">
+              <button type="button" data-preview-prev aria-label="Semana anterior">←</button>
+              <input class="field__input" type="date" data-preview-start aria-label="Data início do preview">
+              <button type="button" data-preview-next aria-label="Próxima semana">→</button>
+            </div>
+          </div>
+          <p class="section-eyebrow" style="margin-top:var(--space-4)">Serviço</p>
+          <div class="wizard-select-grid" data-preview-service-cards></div>
+          <div class="availability-summary" data-preview-summary style="margin-top:var(--space-5)">Selecione um serviço para visualizar a disponibilidade.</div>
+          <div class="availability-days" data-preview-days></div>
+          <div class="time-slots-grid" data-preview-slots></div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="configuracoes">
+        <div class="content-panel">
+          <div class="panel-title-row">
+            <div>
+              <p class="section-eyebrow">Configurações</p>
+              <h2>Parâmetros do Pet Shop</h2>
+            </div>
+          </div>
+          <form data-config-form>
+            <div class="config-section">
+              <div class="config-section__header">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div>
+                  <strong>Profissionais simultâneos</strong>
+                  <p class="config-section__desc">Define quantos clientes podem ser atendidos ao mesmo tempo. Por exemplo, com <strong>2 profissionais</strong>, o mesmo horário das 10h pode ter 2 agendamentos ativos antes de ficar "Ocupado" na visão do cliente.</p>
+                </div>
+              </div>
+              <div class="config-section__field">
+                <label class="field" style="max-width: 220px; margin: 0;">
+                  <span class="field__label">Nº de profissionais / vagas por horário</span>
+                  <input
+                    class="field__input"
+                    type="number"
+                    name="capacidade_simultanea"
+                    id="cfg-capacidade"
+                    min="1"
+                    max="20"
+                    step="1"
+                    required
+                    value="1"
+                    aria-describedby="cfg-capacidade-hint"
+                  >
+                </label>
+                <p class="field__hint" id="cfg-capacidade-hint">Mínimo: 1 &nbsp;|&nbsp; Máximo: 20</p>
+              </div>
+            </div>
+            <div class="config-actions">
+              <button class="btn btn-cta" type="submit" id="cfg-save-btn">Salvar configurações</button>
+              <span class="config-saved-indicator" data-config-saved hidden>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Salvo!
+              </span>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="user-dialog">
+    <form method="dialog" data-user-form>
+      <input type="hidden" name="id">
       <div class="modal__header">
-        <div class="confirm-dialog__title-row">
-          <span class="confirm-dialog__icon" aria-hidden="true">!</span>
-          <h2 class="modal__title" data-confirm-title>Confirmar exclusão</h2>
-        </div>
-        <button class="modal__close" type="button" data-confirm-cancel>
-          ×
-        </button>
+        <h2 class="modal__title" data-user-modal-title>Editar cliente</h2>
+        <button class="modal__close" type="button" data-dialog-close>×</button>
       </div>
-      <div class="modal__body modal__body--confirm">
-        <p class="confirm-dialog__message" data-confirm-message></p>
-        <p class="confirm-dialog__detail" data-confirm-detail></p>
+      <div class="modal__body">
+        <label class="field"><span class="field__label">Nome</span><input class="field__input" name="nome" required></label>
+        <label class="field"><span class="field__label">E-mail</span><input class="field__input" name="email" type="email" required></label>
+        <label class="field"><span class="field__label">Telefone</span><input class="field__input" name="telefone"></label>
+        <label class="field"><span class="field__label">Perfil</span><select class="field__input" name="tipo_perfil"><option value="cliente">cliente</option><option value="admin">admin</option></select></label>
+        <label class="field" data-user-password-field><span class="field__label">Senha</span><input class="field__input" name="senha" type="password" minlength="8" placeholder="Opcional. Padrão: PetWeb@123"></label>
       </div>
       <div class="modal__footer">
-        <button class="btn btn-ghost" type="button" data-confirm-cancel>
-          Cancelar
-        </button>
-        <button class="btn btn-danger" type="button" data-confirm-action>
-          Excluir
-        </button>
+        <button class="btn btn-ghost" type="button" data-dialog-close>Cancelar</button>
+        <button class="btn btn-cta" type="submit">Salvar cliente</button>
       </div>
-    </dialog>
+    </form>
+  </dialog>
 
-    <script src="js/api.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/admin.js"></script>
-  </body>
+  <dialog id="admin-pet-dialog">
+    <form method="dialog" data-admin-pet-form>
+      <input type="hidden" name="id">
+      <div class="modal__header">
+        <h2 class="modal__title" data-admin-pet-modal-title>Editar pet</h2>
+        <button class="modal__close" type="button" data-dialog-close>×</button>
+      </div>
+      <div class="modal__body">
+        <label class="field"><span class="field__label">Nome</span><input class="field__input" name="nome" required></label>
+        <label class="field"><span class="field__label">Tipo</span><select class="field__input" name="especie" data-admin-pet-type-options><option>Carregando...</option></select></label>
+        <label class="field"><span class="field__label">Raça</span><input class="field__input" name="raca"></label>
+        <label class="field"><span class="field__label">Porte</span><select class="field__input" name="porte"><option>Pequeno</option><option>Médio</option><option>Grande</option></select></label>
+        <label class="field"><span class="field__label">Observações</span><textarea class="field__input" name="observacoes" rows="4"></textarea></label>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn-ghost" type="button" data-dialog-close>Cancelar</button>
+        <button class="btn btn-cta" type="submit">Salvar pet</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="service-dialog">
+    <form method="dialog" data-service-form>
+      <input type="hidden" name="id">
+      <div class="modal__header">
+        <h2 class="modal__title" data-service-modal-title>Novo serviço</h2>
+        <button class="modal__close" type="button" data-dialog-close>×</button>
+      </div>
+      <div class="modal__body">
+        <label class="field"><span class="field__label">Nome</span><input class="field__input" name="nome" required></label>
+        <label class="field"><span class="field__label">Preço</span><input class="field__input" name="preco" type="number" min="0" step="0.01" required></label>
+        <label class="field"><span class="field__label">Duração min</span><input class="field__input" name="tempo_estimado" type="number" min="15" step="15" required></label>
+        <label class="field"><span class="field__label">Intervalo min</span><input class="field__input" name="tempo_buffer" type="number" min="0" step="5" required></label>
+        <label class="field"><span class="field__label">Ativo</span><select class="field__input" name="ativo"><option value="1">Sim</option><option value="0">Não</option></select></label>
+        <div class="field">
+          <span class="field__label">Ícones (selecione até 2)</span>
+          <div class="icon-picker-grid" data-icon-picker></div>
+          <input type="hidden" name="icone" id="icone_input" value="paw">
+        </div>
+        <label class="field"><span class="field__label">Descrição</span><textarea class="field__input" name="descricao" rows="4"></textarea></label>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn-ghost" type="button" data-dialog-close>Cancelar</button>
+        <button class="btn btn-cta" type="submit">Salvar serviço</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="pet-type-dialog">
+    <form method="dialog" data-pet-type-form>
+      <input type="hidden" name="id">
+      <div class="modal__header">
+        <h2 class="modal__title" data-pet-type-modal-title>Novo tipo</h2>
+        <button class="modal__close" type="button" data-dialog-close>×</button>
+      </div>
+      <div class="modal__body">
+        <label class="field"><span class="field__label">Nome</span><input class="field__input" name="nome" required></label>
+        <label class="field"><span class="field__label">Ativo</span><select class="field__input" name="ativo"><option value="1">Sim</option><option value="0">Não</option></select></label>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn-ghost" type="button" data-dialog-close>Cancelar</button>
+        <button class="btn btn-cta" type="submit">Salvar tipo</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirm-dialog" class="confirm-dialog">
+    <div class="modal__header">
+      <div class="confirm-dialog__title-row">
+        <span class="confirm-dialog__icon" aria-hidden="true">!</span>
+        <h2 class="modal__title" data-confirm-title>Confirmar exclusão</h2>
+      </div>
+      <button class="modal__close" type="button" data-confirm-cancel>×</button>
+    </div>
+    <div class="modal__body modal__body--confirm">
+      <p class="confirm-dialog__message" data-confirm-message></p>
+      <p class="confirm-dialog__detail" data-confirm-detail></p>
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn-ghost" type="button" data-confirm-cancel>Cancelar</button>
+      <button class="btn btn-danger" type="button" data-confirm-action>Excluir</button>
+    </div>
+  </dialog>
+
+  <dialog id="admin-edit-appt-dialog">
+    <form method="dialog" data-admin-edit-appt-form>
+      <input type="hidden" name="id">
+      <div class="modal__header">
+        <h2 class="modal__title">Editar Agendamento</h2>
+        <button class="modal__close" type="button" data-dialog-close>×</button>
+      </div>
+      <div class="modal__body">
+        <div class="appt-info-row">
+          <strong data-edit-appt-client>Cliente: </strong>
+          <span data-edit-appt-pet>Pet: </span>
+        </div>
+        <label class="field"><span class="field__label">Serviço</span><select class="field__input" name="id_servico" data-edit-appt-service required></select></label>
+        <label class="field"><span class="field__label">Data</span><input class="field__input" type="date" name="data" data-edit-appt-date required></label>
+        <label class="field"><span class="field__label">Horário</span><select class="field__input" name="hora" data-edit-appt-time required><option value="">Selecione a data primeiro</option></select></label>
+        <label class="field"><span class="field__label">Status</span><select class="field__input" name="status"><option>Pendente</option><option>Confirmado</option><option>Em Andamento</option><option>Concluído</option><option>Cancelado</option></select></label>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn-ghost" type="button" data-dialog-close>Cancelar</button>
+        <button class="btn btn-cta" type="submit">Salvar alterações</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/api.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/admin.js"></script>
+  <!-- Início do widget VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <!-- Fim do widget VLibras -->
+</body>
 </html>
