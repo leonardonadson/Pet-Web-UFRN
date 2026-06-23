@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": ".",
-  "functions": {
-    "api/index.js": {
-      "maxDuration": 10
-    }
-  },
-  "rewrites": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
     {
-      "source": "/api/:path*",
-      "destination": "/api?path=:path*"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
     }
   ]
 }
