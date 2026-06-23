@@ -1,11 +1,20 @@
 import jwt from 'jsonwebtoken';
 import { sendError } from './response.js';
 
+function getJwtSecret() {
+  return process.env.JWT_SECRET || process.env.SECRET_KEY;
+}
+
+function getTokenExpiresIn() {
+  const minutes = Number(process.env.ACCESS_TOKEN_EXPIRE_MINUTES);
+  return Number.isFinite(minutes) && minutes > 0 ? `${minutes}m` : '7d';
+}
+
 export function signToken(usuario) {
   return jwt.sign(
     { id: usuario.id, tipo_perfil: usuario.tipo_perfil },
-    process.env.JWT_SECRET,
-    { expiresIn: '7d' }
+    getJwtSecret(),
+    { expiresIn: getTokenExpiresIn() }
   );
 }
 
@@ -24,7 +33,7 @@ export function requireAuth(req, res) {
   }
 
   try {
-    return jwt.verify(token, process.env.JWT_SECRET);
+    return jwt.verify(token, getJwtSecret());
   } catch {
     sendError(res, 401, 'Token inválido ou expirado.');
     return null;
