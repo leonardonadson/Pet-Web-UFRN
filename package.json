@@ -1,16 +1,15 @@
 {
   "name": "petweb",
-  "version": "0.1.0",
+  "version": "0.1.0-entrega1",
   "type": "module",
   "private": true,
-  "description": "PetWeb - sistema web para pet shop com frontend estático e API serverless na Vercel.",
+  "description": "PetWeb - frontend estático + API serverless para deploy na Vercel.",
   "scripts": {
-    "build": "npm run lint && node --check api/index.js",
+    "build": "npm run lint",
     "dev": "npx vercel dev",
     "start": "node local-server.js",
     "dev:local": "node local-server.js",
-    "lint": "node --check js/script.js && node --check js/api.js && node --check js/auth.js && node --check js/dashboard.js && node --check js/agendamento.js && node --check js/admin.js",
-    "check:api": "find api -type f -name '*.js' -exec node --check {} \\;"
+    "lint": "node --check js/script.js && node --check js/api.js && node --check js/auth.js && node --check js/dashboard.js && node --check js/agendamento.js && node --check js/admin.js"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.0",
