@@ -5,7 +5,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".",
   "functions": {
-    "api/index.js": {
+    "api/**/*.js": {
       "maxDuration": 10
     }
   },
