@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento | PetWeb</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html"><svg class="header-brand-mark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-right: 4px;"><path d="M20 4 L36 16 V34 H26 V24 A6 6 0 0 0 14 24 V34 H4 V16 Z" fill="url(#houseGrad)"/><circle cx="20" cy="14" r="3" fill="#FFFFFF"/><defs><linearGradient id="houseGrad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#4F46E5"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs></svg><span class="header__logo-text">PetWeb</span></a>
+      <div class="header__actions" data-auth-actions>
+        <a class="btn btn-ghost btn-sm" href="login.html">Entrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Agendamento</p>
+        <h1 class="section-title">Agende em uma tela, sem perder contexto.</h1>
+        <p class="section-subtitle">Escolha pet, serviço e horário. Se ainda não estiver logado, você entra ou cria conta aqui no fluxo.</p>
+      </div>
+
+      <section class="booking-layout">
+        <div class="booking-main">
+          <div class="content-panel auth-gate" data-auth-gate hidden>
+            <h2>Entre para confirmar</h2>
+            <p>Você pode olhar serviços e horários, mas precisa de conta para salvar o agendamento no seu painel.</p>
+            <div class="inline-actions">
+              <a class="btn btn-cta" href="login.html?next=/agendamento.html">Entrar</a>
+              <a class="btn btn-outline" href="cadastro.html?next=/agendamento.html">Criar conta</a>
+            </div>
+          </div>
+
+          <section class="content-panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="section-eyebrow">1. Pet</p>
+                <h2>Quem será atendido?</h2>
+              </div>
+              <button class="btn btn-primary btn-sm" type="button" data-dialog-open="#pet-dialog">Adicionar pet</button>
+            </div>
+            <div class="wizard-select-grid" data-pet-options></div>
+          </section>
+
+          <section class="content-panel">
+            <p class="section-eyebrow">2. Serviço</p>
+            <h2>Escolha o serviço</h2>
+            <div class="wizard-select-grid" data-service-options></div>
+          </section>
+
+          <section class="content-panel">
+            <div class="panel-title-row">
+              <div>
+                <p class="section-eyebrow">3. Data e horário</p>
+                <h2>Quando fica melhor?</h2>
+              </div>
+              <div class="period-nav" data-period-nav>
+                <button class="period-nav__btn" type="button" data-period-prev aria-label="Período anterior">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <span class="period-nav__label" data-period-label>Próximos 21 dias</span>
+                <button class="period-nav__btn" type="button" data-period-next aria-label="Próximo período">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="availability-summary" data-availability-summary>Escolha um serviço para consultar a agenda.</div>
+            <div class="availability-days" data-availability-days></div>
+            <input id="data" type="date" style="display:none" aria-hidden="true">
+            <div class="time-slots-grid" data-time-slots></div>
+          </section>
+        </div>
+
+        <aside class="content-panel booking-summary">
+          <p class="section-eyebrow">Resumo</p>
+          <h2>Confirmação</h2>
+          <dl data-booking-summary>
+            <div><dt>Pet</dt><dd>Selecione um pet</dd></div>
+            <div><dt>Serviço</dt><dd>Selecione um serviço</dd></div>
+            <div><dt>Data/Hora</dt><dd>Selecione data e horário</dd></div>
+            <div><dt>Total</dt><dd>-</dd></div>
+          </dl>
+          <button class="btn btn-cta" type="button" data-confirm-booking>Confirmar Agendamento</button>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="pet-dialog">
+    <form method="dialog" data-inline-pet-form>
+      <div class="modal__header"><h2 class="modal__title">Adicionar pet</h2><button class="modal__close" type="button" data-dialog-close>×</button></div>
+      <div class="modal__body">
+        <label class="field"><span class="field__label">Nome</span><input class="field__input" name="nome" required></label>
+        <label class="field"><span class="field__label">Tipo</span><select class="field__input" name="especie" data-pet-type-options><option>Carregando...</option></select></label>
+        <label class="field"><span class="field__label">Raça</span><input class="field__input" name="raca"></label>
+        <label class="field"><span class="field__label">Porte</span><select class="field__input" name="porte"><option>Pequeno</option><option>Médio</option><option>Grande</option></select></label>
+        <label class="field"><span class="field__label">Observações</span><textarea class="field__input" name="observacoes" rows="4"></textarea></label>
+      </div>
+      <div class="modal__footer"><button class="btn btn-ghost" type="button" data-dialog-close>Cancelar</button><button class="btn btn-cta" type="submit">Salvar pet</button></div>
+    </form>
+  </dialog>
+
+  <script src="js/api.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/agendamento.js"></script>
+  <!-- Início do widget VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <!-- Fim do widget VLibras -->
+</body>
+</html>
