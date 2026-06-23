@@ -1,6 +1,6 @@
-import { getSql } from '../../../_lib/db.js';
-import { requireAdmin } from '../../../_lib/auth.js';
-import { sendJson, sendError, methodNotAllowed } from '../../../_lib/response.js';
+import { getSql } from '../../_lib/db.js';
+import { requireAdmin } from '../../_lib/auth.js';
+import { sendJson, sendError, methodNotAllowed } from '../../_lib/response.js';
 
 export default async function handler(req, res) {
   const admin = requireAdmin(req, res);

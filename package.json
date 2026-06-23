@@ -5,11 +5,12 @@
   "private": true,
   "description": "PetWeb - sistema web para pet shop com frontend estático e API serverless na Vercel.",
   "scripts": {
+    "build": "node -e \"console.log('Frontend estatico: nenhum build necessario.')\"",
     "dev:vercel": "npx vercel dev",
     "start": "node local-server.js",
     "dev:local": "node local-server.js",
     "lint": "node --check js/script.js && node --check js/api.js && node --check js/auth.js && node --check js/dashboard.js && node --check js/agendamento.js && node --check js/admin.js",
-    "check:api": "find api -type f -name '*.js' -exec node --check {} \\;"
+    "check:api": "find api server/api -type f -name '*.js' -exec node --check {} \\;"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.0",
