@@ -6,15 +6,14 @@ export default async function handler(req, res) {
 
   try {
     const sql = getSql();
-    const servicos = await sql`
-      SELECT id, nome, descricao, preco, tempo_estimado, icone
-      FROM servicos
+    const tipos = await sql`
+      SELECT id, nome, ativo
+      FROM tipos_pet
       WHERE ativo = TRUE
-      ORDER BY id
+      ORDER BY nome
     `;
-
-    return sendJson(res, 200, { servicos });
+    return sendJson(res, 200, { tipos });
   } catch {
-    return sendError(res, 500, 'Não foi possível listar os serviços.');
+    return sendError(res, 500, 'Não foi possível carregar os tipos de pet.');
   }
 }

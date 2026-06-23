@@ -49,3 +49,12 @@ SET nome_dia = EXCLUDED.nome_dia,
     fecha = EXCLUDED.fecha,
     ultimo_inicio = EXCLUDED.ultimo_inicio,
     bloqueado = EXCLUDED.bloqueado;
+
+INSERT INTO intervalos_indisponiveis (dia_semana, titulo, inicio, fim, ativo)
+SELECT v.dia_semana, 'Almoço', TIME '12:00', TIME '13:00', TRUE
+FROM (VALUES (1), (2), (3), (4), (5)) AS v(dia_semana)
+WHERE NOT EXISTS (SELECT 1 FROM intervalos_indisponiveis WHERE titulo = 'Almoço');
+
+INSERT INTO configuracoes (chave, valor)
+VALUES ('capacidade_simultanea', '1')
+ON CONFLICT (chave) DO NOTHING;

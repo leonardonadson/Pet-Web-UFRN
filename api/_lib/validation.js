@@ -28,7 +28,7 @@ export async function validateBusinessDateAsync(sql, value) {
 
   const exceptions = await sql`
     SELECT * FROM excecoes_funcionamento
-    WHERE data = ${dateKey} OR (recorrente_anual = TRUE AND right(data, 5) = ${dateKey.slice(5)})
+    WHERE data = ${dateKey} OR (recorrente_anual = TRUE AND right(data::text, 5) = ${dateKey.slice(5)})
     ORDER BY recorrente_anual ASC, id DESC LIMIT 1
   `;
   const exception = exceptions[0];

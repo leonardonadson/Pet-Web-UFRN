@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS servicos (
   preco DECIMAL(8,2) NOT NULL,
   tempo_estimado INT NOT NULL,
   tempo_buffer INT DEFAULT 15,
+  icone VARCHAR(40) DEFAULT 'paw',
   ativo BOOLEAN DEFAULT TRUE
 );
 
@@ -69,6 +70,21 @@ CREATE TABLE IF NOT EXISTS excecoes_funcionamento (
   criado_em TIMESTAMP DEFAULT NOW()
 );
 
+CREATE TABLE IF NOT EXISTS intervalos_indisponiveis (
+  id SERIAL PRIMARY KEY,
+  dia_semana INT NOT NULL CHECK (dia_semana BETWEEN 0 AND 6),
+  titulo VARCHAR(120) NOT NULL,
+  inicio TIME NOT NULL,
+  fim TIME NOT NULL,
+  ativo BOOLEAN DEFAULT TRUE,
+  criado_em TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS configuracoes (
+  chave VARCHAR(60) PRIMARY KEY,
+  valor TEXT
+);
+
 CREATE INDEX IF NOT EXISTS idx_usuarios_email ON usuarios(email);
 CREATE INDEX IF NOT EXISTS idx_tipos_pet_ativo ON tipos_pet(ativo);
 CREATE INDEX IF NOT EXISTS idx_pets_usuario ON pets(id_usuario);
@@ -76,3 +92,4 @@ CREATE INDEX IF NOT EXISTS idx_agendamentos_usuario ON agendamentos(id_usuario);
 CREATE INDEX IF NOT EXISTS idx_agendamentos_data_hora ON agendamentos(data_hora);
 CREATE INDEX IF NOT EXISTS idx_agendamentos_status ON agendamentos(status);
 CREATE INDEX IF NOT EXISTS idx_excecoes_data ON excecoes_funcionamento(data);
+CREATE INDEX IF NOT EXISTS idx_intervalos_dia ON intervalos_indisponiveis(dia_semana, ativo);
