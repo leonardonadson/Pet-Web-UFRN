@@ -45,13 +45,28 @@
         </div>
       </header>
 
+      <div class="user-tabs">
+        <button class="user-tab active" type="button" data-client-tab="agendamentos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Meus Agendamentos
+        </button>
+        <button class="user-tab" type="button" data-client-tab="pets">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c2.5 0 4.5 2 4.5 4.5 0 2.5-2 4.5-4.5 4.5S7.5 12 7.5 9.5 9.5 5 12 5z"></path><path d="M12 14c-4.5 0-8 3.5-8 8h16c0-4.5-3.5-8-8-8z"></path></svg>
+          Meus Pets
+        </button>
+        <button class="user-tab user-tab--cta" type="button" data-client-tab="novo-agendamento">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Novo Agendamento
+        </button>
+      </div>
+
       <section class="dashboard-content-area">
         <div class="dashboard-panel active" data-client-panel="agendamentos">
           <div class="section-header">
             <h2 class="section-title">Meus agendamentos</h2>
-            <p class="section-subtitle">Acompanhe seus próximos serviços. (Demonstração visual — Entrega 1)</p>
+            <p class="section-subtitle">Acompanhe seus próximos serviços.</p>
           </div>
-
+          
           <div class="appointment-counters" data-dashboard-counters style="display:flex;gap:16px;margin-bottom:32px;">
             <div class="appt-counter" style="padding:16px 24px;background:#fff;border-radius:12px;border:1px solid #e5e7eb;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
               <strong data-counter-pending style="display:block;font-size:24px;color:#f59e0b;font-weight:800;">0</strong>
@@ -66,16 +81,165 @@
               <span style="font-size:14px;color:#6b7280;font-weight:700;">Concluídos</span>
             </div>
           </div>
-
+          
           <div class="appointments-grid" data-appointments-body>
-            <!-- cards renderizados via JS (mock estático) -->
+            <!-- cards rendered via JS -->
           </div>
+        </div>
+
+        <div class="dashboard-panel" data-client-panel="pets">
+          <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <h2 class="section-title">Meus pets</h2>
+              <p class="section-subtitle">Gerencie os perfis dos seus companheiros.</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-dialog-open="#pet-dialog">Adicionar Pet</button>
+          </div>
+          <div class="pet-grid" data-pets-grid></div>
+        </div>
+
+        <div class="dashboard-panel" data-client-panel="novo-agendamento">
+          <div class="section-header">
+            <h2 class="section-title">Novo agendamento</h2>
+            <p class="section-subtitle">Reserve um horário para o seu pet em poucos cliques.</p>
+          </div>
+          <section class="booking-layout">
+            <div class="booking-main">
+              <section class="content-panel">
+                <div class="panel-title-row">
+                  <div>
+                    <p class="section-eyebrow">1. Pet</p>
+                    <h2>Quem será atendido?</h2>
+                  </div>
+                  <button class="btn btn-primary btn-sm" type="button" data-dialog-open="#pet-dialog">Adicionar pet</button>
+                </div>
+                <div class="wizard-select-grid" data-pet-options></div>
+              </section>
+              <section class="content-panel">
+                <p class="section-eyebrow">2. Serviço</p>
+                <h2>Escolha o serviço</h2>
+                <div class="wizard-select-grid" data-service-options></div>
+              </section>
+              <section class="content-panel">
+                <p class="section-eyebrow">3. Data e horário</p>
+                <h2>Quando fica melhor?</h2>
+                <div class="availability-summary" data-availability-summary>Escolha um serviço para consultar a agenda.</div>
+                <div class="availability-days" data-availability-days></div>
+                <label class="field">
+                  <span class="field__label">Data</span>
+                  <input class="field__input" id="data" type="date" required>
+                </label>
+                <div class="time-slots-grid" data-time-slots></div>
+              </section>
+            </div>
+            <aside class="content-panel booking-summary">
+              <p class="section-eyebrow">Resumo</p>
+              <h2>Confirmação</h2>
+              <dl data-booking-summary>
+                <div><dt>Pet</dt><dd>Selecione um pet</dd></div>
+                <div><dt>Serviço</dt><dd>Selecione um serviço</dd></div>
+                <div><dt>Data/Hora</dt><dd>Selecione data e horário</dd></div>
+                <div><dt>Total</dt><dd>-</dd></div>
+              </dl>
+              <button class="btn btn-cta" type="button" data-confirm-booking>Confirmar Agendamento</button>
+            </aside>
+          </section>
         </div>
       </section>
     </div>
   </main>
+  <dialog id="pet-dialog">
+    <form method="dialog" data-pet-form>
+      <input type="hidden" name="id">
+      <div class="modal__header"><h2 class="modal__title" data-pet-modal-title>Adicionar pet</h2><button class="modal__close" type="button" data-dialog-close>×</button></div>
+      <div class="modal__body">
+        <label class="field"><span class="field__label">Nome</span><input class="field__input" name="nome" required></label>
+        <label class="field"><span class="field__label">Tipo</span><select class="field__input" name="especie" data-pet-type-options><option>Carregando...</option></select></label>
+        <label class="field"><span class="field__label">Raça</span><input class="field__input" name="raca"></label>
+        <label class="field"><span class="field__label">Porte</span><select class="field__input" name="porte"><option>Pequeno</option><option>Médio</option><option>Grande</option></select></label>
+        <label class="field"><span class="field__label">Observações</span><textarea class="field__input" name="observacoes" rows="4"></textarea></label>
+      </div>
+      <div class="modal__footer"><button class="btn btn-ghost" type="button" data-dialog-close>Cancelar</button><button class="btn btn-cta" type="submit">Salvar</button></div>
+    </form>
+  </dialog>
+  <dialog id="confirm-dialog" class="confirm-dialog">
+    <div class="modal__header">
+      <div class="confirm-dialog__title-row">
+        <span class="confirm-dialog__icon" aria-hidden="true">!</span>
+        <h2 class="modal__title" data-confirm-title>Confirmar remoção</h2>
+      </div>
+      <button class="modal__close" type="button" data-confirm-cancel>×</button>
+    </div>
+    <div class="modal__body modal__body--confirm">
+      <p class="confirm-dialog__message" data-confirm-message></p>
+      <p class="confirm-dialog__detail" data-confirm-detail></p>
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn-ghost" type="button" data-confirm-cancel>Cancelar</button>
+      <button class="btn btn-danger" type="button" data-confirm-action>Remover</button>
+    </div>
+  </dialog>
+  <dialog id="edit-appt-dialog" class="reschedule-dialog">
+    <form method="dialog" data-edit-appt-form>
+      <input type="hidden" name="id">
+      <input type="hidden" name="id_servico">
+      <input type="hidden" name="data">
+      <input type="hidden" name="hora">
+      <div class="modal__header">
+        <div>
+          <h2 class="modal__title">Remarcar Agendamento</h2>
+          <p class="reschedule-subtitle" data-edit-appt-service-name style="margin:0;font-size:14px;color:var(--clr-neutral-600);">Serviço</p>
+        </div>
+        <button class="modal__close" type="button" data-dialog-close>×</button>
+      </div>
+      <div class="modal__body reschedule-body">
+        <div class="reschedule-pet-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+          <span data-edit-appt-pet-name style="font-weight:700;color:var(--clr-neutral-900);">Pet</span>
+        </div>
+
+        <div>
+          <p class="section-eyebrow" style="margin-bottom:12px;">Escolha um dia</p>
+          <div class="reschedule-day-nav">
+            <button class="period-nav__btn" type="button" data-reschedule-prev>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <span class="period-nav__label" data-reschedule-period-label></span>
+            <button class="period-nav__btn" type="button" data-reschedule-next>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+          <div class="reschedule-days-grid" data-reschedule-days>
+            <div class="reschedule-loading">Carregando disponibilidade...</div>
+          </div>
+        </div>
+
+        <div data-reschedule-slots-section style="display:none;">
+          <p class="reschedule-slots-label">Horários disponíveis — <span data-reschedule-selected-day-label></span></p>
+          <div class="time-slots-grid" data-reschedule-slots></div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn-ghost" type="button" data-dialog-close>Cancelar</button>
+        <button class="btn btn-cta" type="submit" data-reschedule-confirm disabled>Confirmar Remarque</button>
+      </div>
+    </form>
+  </dialog>
   <script src="js/script.js"></script>
   <script src="js/api.js"></script>
+  <script src="js/agendamento.js"></script>
   <script src="js/dashboard.js"></script>
+  <!-- Início do widget VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <!-- Fim do widget VLibras -->
 </body>
 </html>
